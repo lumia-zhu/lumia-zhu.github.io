@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /Research/
+Allow: /Research/index/
+Allow: /Research/chi25-paper.html
+Allow: /Research/index/CHI25_Pedagogical_agent.pdf
+
+User-agent: Googlebot
+Allow: /
+Allow: /Research/
+Allow: /Research/index/
+Allow: /Research/chi25-paper.html
+Allow: /Research/index/CHI25_Pedagogical_agent.pdf
+
+Sitemap: https://lumia-zhu.github.io/sitemap.xml
