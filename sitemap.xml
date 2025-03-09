@@ -19,10 +19,16 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lumia-zhu.github.io/Research/index/CHI25_Pedagogical_agent.pdf</loc>
+    <loc>https://lumia-zhu.github.io/Research/chi25-paper.pdf</loc>
     <lastmod>2025-03-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lumia-zhu.github.io/Research/index/CHI25_Pedagogical_agent.pdf</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lumia-zhu.github.io/Experience/</loc>
