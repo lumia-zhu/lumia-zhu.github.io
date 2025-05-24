@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content=".experience-container {   margin-bottom: 22px; } .institution {   font-size: 1.15em;   font-weight: 600;   color: #333;   margin-bottom: 4px;   display: flex;   justify-content: space-between; } .loc">
+  <meta name="description" content=".experience-container {   margin-bottom: 16px; &#x2F;* 进一步减小容器间距 *&#x2F;   max-width: 100%; &#x2F;* 确保不超出边界 *&#x2F; } .institution {   font-size: 0.95em; &#x2F;* 进一步减小机构名称字体 *&#x2F;   font-weight: 600;   color: #333;   margin-bot">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Experience">
 <meta property="og:url" content="http://example.com/Experience/index.html">
 <meta property="og:site_name" content="Zihao ZHU">
-<meta property="og:description" content=".experience-container {   margin-bottom: 22px; } .institution {   font-size: 1.15em;   font-weight: 600;   color: #333;   margin-bottom: 4px;   display: flex;   justify-content: space-between; } .loc">
+<meta property="og:description" content=".experience-container {   margin-bottom: 16px; &#x2F;* 进一步减小容器间距 *&#x2F;   max-width: 100%; &#x2F;* 确保不超出边界 *&#x2F; } .institution {   font-size: 0.95em; &#x2F;* 进一步减小机构名称字体 *&#x2F;   font-weight: 600;   color: #333;   margin-bot">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-11T07:42:16.000Z">
-<meta property="article:modified_time" content="2025-05-23T16:05:10.993Z">
+<meta property="article:modified_time" content="2025-05-24T01:56:03.188Z">
 <meta property="article:author" content="Zihao ZHU">
 <meta name="twitter:card" content="summary">
 
@@ -209,15 +209,20 @@
       <div class="post-body">
           <style>
 .experience-container {
-  margin-bottom: 22px;
+  margin-bottom: 16px; /* 进一步减小容器间距 */
+  max-width: 100%; /* 确保不超出边界 */
 }
 .institution {
-  font-size: 1.15em;
+  font-size: 0.95em; /* 进一步减小机构名称字体 */
   font-weight: 600;
   color: #333;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap; /* 防止换行 */
+  align-items: baseline;
+  word-spacing: -1px; /* 减小词间距 */
+  letter-spacing: -0.2px; /* 轻微减小字母间距 */
 }
 .location {
   font-weight: normal;
@@ -227,16 +232,20 @@
   font-style: italic;
   color: #777;
   text-align: right;
-  min-width: 180px;
+  min-width: 180px; /* 减小日期宽度 */
+  white-space: nowrap; /* 防止日期换行 */
+  margin-left: 8px; /* 减小间距 */
+  font-size: 0.9em; /* 减小日期字体 */
 }
 .degree {
   color: #222;
-  margin: 4px 0;
+  margin: 2px 0;
+  font-size: 0.9em; /* 减小学位字体 */
 }
 .supervisor {
   margin-top: 2px;
   color: #555;
-  font-size: 0.95em;
+  font-size: 0.85em; /* 减小导师信息字体 */
 }
 .supervisor a {
   color: #555;
@@ -247,9 +256,35 @@
   text-decoration: none;
 }
 .section-header {
-  margin-bottom: 18px;
-  font-size: 1.4em;
+  margin-bottom: 14px;
+  font-size: 0.95em; /* 进一步减小标题字体 */
   color: #444;
+  font-weight: 600; /* 增加字重补偿字体变小 */
+}
+
+/* 改进响应式布局支持 */
+@media screen and (max-width: 768px) {
+  .institution {
+    flex-direction: column;
+  }
+  .date {
+    margin-left: 0;
+    margin-top: 2px;
+    min-width: auto;
+  }
+}
+
+/* 添加更小屏幕的支持 */
+@media screen and (max-width: 480px) {
+  .institution, .degree, .supervisor {
+    font-size: 0.85em;
+  }
+  .date {
+    font-size: 0.8em;
+  }
+  .section-header {
+    font-size: 1em;
+  }
 }
 </style>
 
