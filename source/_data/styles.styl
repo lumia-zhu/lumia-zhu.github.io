@@ -1,0 +1,152 @@
+// 圆角设置
+$border-radius-inner     = 20px 20px 20px 20px;
+$border-radius           = 20px;
+
+// Recent News 模块样式 - 修正对齐问题
+.recent-news-widget {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px dotted rgba(153, 153, 153, 0.3);
+  
+  .recent-news-title {
+    color: $grey-dark;
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    
+    .fa {
+      margin-right: 6px;
+      color: $grey-dark;
+      font-size: 14px;
+    }
+  }
+  
+  .recent-news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    
+    // 时间轴主线
+    &::before {
+      content: '';
+      position: absolute;
+      left: 55px;
+      top: 12px;
+      bottom: 12px;
+      width: 1px;
+      background: rgba(153, 153, 153, 0.25);
+    }
+    
+    .recent-news-item {
+      position: relative;
+      padding: 8px 0;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      the-transition();
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      // 时间轴节点 - 重新精确计算
+      &::before {
+        content: '';
+        position: absolute;
+        left: 52px; // 重新计算：让圆点中心对准线
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        background: $grey-dark;
+        border-radius: 50%;
+        border: 1px solid $black-deep; // 减少边框宽度
+        the-transition();
+        z-index: 1;
+      }
+      
+      &:hover {
+        &::before {
+          background: $grey-light;
+          transform: translateY(-50%) scale(1.2);
+        }
+        
+        .news-content {
+          color: $grey-light;
+        }
+      }
+      
+      .news-date {
+        color: $grey-dark;
+        font-weight: 600;
+        font-size: 11px;
+        width: 40px;
+        text-align: right;
+        margin-right: 25px;
+        letter-spacing: 0.3px;
+        flex-shrink: 0;
+      }
+      
+      .news-content {
+        color: $grey-dark;
+        font-size: 12px;
+        line-height: 1.4;
+        flex: 1;
+        text-align: left;
+        margin-left: 15px;
+        the-transition();
+      }
+    }
+  }
+}
+
+// Pisces/Gemini 主题适配
+if (hexo-config('scheme') == 'Pisces' || hexo-config('scheme') == 'Gemini') {
+  .recent-news-widget {
+    border-top: 1px dotted rgba(102, 102, 102, 0.2);
+    
+    .recent-news-title {
+      color: $grey-dim;
+      
+      .fa {
+        color: $grey-dim;
+      }
+    }
+    
+    .recent-news-list {
+      // 时间轴主线
+      &::before {
+        background: rgba(102, 102, 102, 0.15);
+      }
+      
+      .recent-news-item {
+        // 时间轴节点
+        &::before {
+          background: $grey-dim;
+          border-color: var(--content-bg-color);
+        }
+        
+        &:hover {
+          &::before {
+            background: $grey-dark;
+          }
+          
+          .news-content {
+            color: $black-light;
+          }
+        }
+        
+        .news-date {
+          color: $grey-dim;
+        }
+        
+        .news-content {
+          color: $grey-dim;
+        }
+      }
+    }
+  }
+} 
