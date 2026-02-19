@@ -1,0 +1,23 @@
+[
+	{
+		"slug": "new-york-california",
+		"title": "New York is 3 Hours Ahead of California",
+		"date": "2024-03-15",
+		"summary": "May we try our best to live the best of ourselves in our own time zone！",
+		"tags": ["Life", "Reflection"]
+	},
+	{
+		"slug": "why-we-procrastinate",
+		"title": "我们为什么会摆烂",
+		"date": "2023-06-12",
+		"summary": "解决病态完美主义的方案：要随时随地的开始，不要煞有其事的开始。借助 PDCA 模型打破摆烂循环。",
+		"tags": ["Productivity", "Life"]
+	},
+	{
+		"slug": "what-is-okr",
+		"title": "什么是OKR",
+		"date": "2023-06-11",
+		"summary": "最早是21年在小米实习的时候在一场讲座上听到OKR，对于什么是OKR，感觉我一直处于半知半解的状态，这两天稍稍学习了一下，想尝试从我的角度说说OKR是什么。",
+		"tags": ["Productivity", "Research"]
+	}
+]

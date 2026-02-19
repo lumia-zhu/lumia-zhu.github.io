@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Blog Post - Zihao ZHU</title>
+	<meta name="description" content="Blog post by Zihao ZHU.">
+	<meta name="author" content="Zihao ZHU">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/vendor.css">
+	<link rel="icon" type="image/png" href="favicon.png">
+	<script src="js/modernizr.js"></script>
+
+	<!-- Highlight.js - 代码语法高亮 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+</head>
+
+<body id="top">
+
+	<!-- ========== Header ========== -->
+	<header>
+		<div class="row">
+			<div class="top-bar">
+				<a class="menu-toggle" href="#"><span>Menu</span></a>
+				<div class="logo">
+					<a href="index.html">Zihao ZHU</a>
+				</div>
+				<nav id="main-nav-wrap">
+					<ul class="main-navigation">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="publications.html">Publications</a></li>
+						<li><a href="experience.html">Experience</a></li>
+						<li class="current"><a href="blog.html">Blog</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<!-- ========== Blog Post ========== -->
+	<section id="blog-post">
+		<div class="post-container">
+
+			<!-- 文章头部信息 -->
+			<div class="post-header" id="post-header">
+				<h1 id="post-title">Loading...</h1>
+				<div class="post-meta">
+					<span class="date" id="post-date"></span>
+					<span id="post-tags"></span>
+				</div>
+			</div>
+
+			<!-- Markdown 渲染的文章内容 -->
+			<div class="post-body" id="post-body">
+				<p style="text-align:center; color:#888;">Loading post content...</p>
+			</div>
+
+			<!-- 返回博客列表 -->
+			<div class="post-back">
+				<a href="blog.html">&larr; Back to Blog</a>
+			</div>
+
+		</div>
+	</section>
+	<!-- ========== /Blog Post ========== -->
+
+
+	<!-- ========== Footer ========== -->
+	<footer class="academic-footer">
+		<ul class="footer-social">
+			<li><a href="mailto:zihao.zhu@cityu.edu.hk"><i class="fa fa-envelope"></i></a></li>
+			<li><a href="https://github.com/" target="_blank"><i class="fa fa-github"></i></a></li>
+			<li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+			<li><a href="https://scholar.google.com/" target="_blank"><i class="fa fa-graduation-cap"></i></a></li>
+		</ul>
+		<div class="copyright">
+			<span>&copy; 2026 Zihao ZHU.</span>
+		</div>
+	</footer>
+
+	<div id="go-top">
+		<a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+	</div>
+
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+	<!-- Marked.js - Markdown 解析器 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+	<!-- Highlight.js - 代码高亮 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+	<!-- Blog Post Loader -->
+	<script>
+	(function() {
+		// 配置 marked.js（v5+ 新 API，兼容 v12）
+		marked.use({
+			gfm: true,
+			breaks: false
+		});
+
+		// 从 URL hash 获取文章 slug（#slug，比 ?post= 更稳定）
+		var slug = window.location.hash.slice(1); // 去掉开头的 '#'
+
+		if (!slug) {
+			document.getElementById('post-title').textContent = 'Post Not Found';
+			document.getElementById('post-body').innerHTML =
+				'<p>No post specified. <a href="blog.html">Go back to blog</a>.</p>';
+			return;
+		}
+
+		// 加载文章元数据
+		fetch('blog/posts.json')
+			.then(function(response) { return response.json(); })
+			.then(function(posts) {
+				var post = posts.find(function(p) { return p.slug === slug; });
+
+				if (post) {
+					document.getElementById('post-title').textContent = post.title;
+					document.getElementById('post-date').textContent = post.date;
+					document.title = post.title + ' - Zihao ZHU';
+
+					// 显示标签
+					if (post.tags && post.tags.length > 0) {
+						var tagsHtml = post.tags.map(function(tag) {
+							return '<span style="font-size:1.2rem; background:rgba(102,186,183,0.1); color:#66BAB7; padding:0.2rem 0.8rem; border-radius:3px; margin-left:0.5rem;">' + tag + '</span>';
+						}).join('');
+						document.getElementById('post-tags').innerHTML = tagsHtml;
+					}
+				}
+			})
+			.catch(function(err) {
+				console.error('Failed to load post metadata:', err);
+			});
+
+		// 加载并渲染 Markdown 文件
+		fetch('blog/posts/' + slug + '.md')
+			.then(function(response) {
+				if (!response.ok) throw new Error('Post not found');
+				return response.text();
+			})
+			.then(function(markdown) {
+				// 用 marked.js 将 Markdown 转换为 HTML
+				var html = marked.parse(markdown);
+				document.getElementById('post-body').innerHTML = html;
+
+				// 为代码块添加高亮
+				document.querySelectorAll('#post-body pre code').forEach(function(block) {
+					hljs.highlightElement(block);
+				});
+			})
+			.catch(function(err) {
+				console.error('Failed to load post:', err);
+				document.getElementById('post-body').innerHTML =
+					'<p>Failed to load post content. <a href="blog.html">Go back to blog</a>.</p>';
+			});
+	})();
+	</script>
+
+</body>
+</html>
