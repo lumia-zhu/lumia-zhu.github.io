@@ -68,8 +68,8 @@
 	var $lightbox    = $('#lightbox');
 	var $lightboxImg = $('#lightbox-img');
 
-	// 点击任意 .pub-thumb 内的图片 → 打开弹窗
-	$(document).on('click', '.pub-thumb img', function() {
+	// 点击任意 .pub-thumb 或 .sel-pub-thumb 内的图片 → 打开弹窗
+	$(document).on('click', '.pub-thumb img, .sel-pub-thumb img', function() {
 		var src = $(this).attr('src');
 		var alt = $(this).attr('alt');
 		$lightboxImg.attr('src', src).attr('alt', alt);

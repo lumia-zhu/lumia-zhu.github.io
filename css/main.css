@@ -3086,13 +3086,14 @@ body {
 .pub-links li a {
 	display: inline-block;
 	font-family: "poppins-medium", sans-serif;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	color: #66BAB7;
-	padding: 0.3rem 1rem;
-	border: 1px solid #66BAB7;
-	border-radius: 4px;
-	letter-spacing: .03rem;
-	transition: all 0.3s ease;
+	padding: 0.12rem 0.7rem;
+	line-height: 1.6;
+	border: 1px solid rgba(102,186,183,0.6);
+	border-radius: 3px;
+	letter-spacing: .02rem;
+	transition: all 0.2s ease;
 }
 .pub-links li a:hover {
 	background: #66BAB7;
@@ -3753,6 +3754,7 @@ footer.academic-footer .footer-social li a:hover {
 		top: 50%;
 		transform: translateY(-50%);
 		margin-left: 0;
+		margin-top: 0;
 	}
 
 	/* 主页布局改为单列 */
@@ -3760,11 +3762,23 @@ footer.academic-footer .footer-social li a:hover {
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		gap: 0;
+		gap: 1.6rem;
 	}
 
-	/* 隐藏侧边栏（头像、信息卡、社交链接、新闻） */
+	/* 侧边栏移动端：居中显示，撑满宽度 */
 	.profile-left {
+		width: 100%;
+		max-width: 360px;
+		align-items: center;
+		gap: 1.2rem;
+	}
+
+	/* 隐藏 Recent News（移动端空间不够） */
+	.news-widget {
+		display: none;
+	}
+	/* 移动端隐藏 Selected Publications 缩略图 */
+	.sel-pub-thumb {
 		display: none;
 	}
 
@@ -3843,27 +3857,55 @@ footer.academic-footer .footer-social li a:hover {
 	letter-spacing: .15rem;
 	margin-bottom: 2rem;
 }
-/* 每条论文 */
+/* 每条论文：左图右文横向布局 */
 .sel-pub-item {
-	padding: 1.2rem 0 1.2rem 1.2rem;
-	margin-bottom: 0.2rem;
-	border-left: 3px solid transparent;
-	transition: border-color 0.25s ease, background 0.25s ease;
-	border-radius: 0 6px 6px 0;
+	display: flex;
+	gap: 1.4rem;
+	padding: 1.4rem 0;
+	border-bottom: 1px solid #f0f0f0;
+	transition: background 0.2s ease;
+	align-items: flex-start;
+}
+.sel-pub-item:last-of-type {
+	border-bottom: none;
 }
 .sel-pub-item:hover {
-	border-left-color: #66BAB7;
-	background: rgba(102, 186, 183, 0.04);
+	background: rgba(102, 186, 183, 0.03);
 }
-/* badge 行内显示 */
-.sel-pub-meta {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	margin-bottom: 0.5rem;
+/* 左侧缩略图 */
+.sel-pub-thumb {
+	flex-shrink: 0;
+	width: 140px;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.sel-pub-content {
+.sel-pub-item:hover .sel-pub-thumb {
+	transform: scale(1.03);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.sel-pub-thumb img {
 	width: 100%;
+	height: auto;
+	display: block;
+	cursor: zoom-in;
+}
+/* 右侧内容 */
+.sel-pub-body {
+	flex: 1;
+	min-width: 0;
+}
+/* badge 在标题上方，紧凑显示 */
+.sel-pub-body .pub-badge {
+	font-size: 1rem;
+	padding: 0.2rem 0.7rem;
+	margin-bottom: 0.3rem;
+	display: inline-block;
+}
+/* 图片与标题对齐，跳过 badge 高度（约 2rem） */
+.sel-pub-thumb {
+	margin-top: 2rem;
 }
 .sel-pub-title {
 	display: block;
