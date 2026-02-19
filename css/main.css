@@ -2891,8 +2891,8 @@ body {
 	content: '';
 	position: absolute;
 	left: calc(0.7rem - 1px); /* 竖线左边缘，使中心在 0.7rem */
-	top: 0.6rem;
-	bottom: 0.6rem;
+	top: 0.85rem;   /* 与第一个圆点的圆心对齐 */
+	bottom: 2.2rem; /* 与最后一个圆点的圆心对齐（每项约 3rem 高，点在顶部 0.85rem 处）*/
 	width: 2px;
 	background: rgba(102, 186, 183, 0.3);
 	border-radius: 1px;
