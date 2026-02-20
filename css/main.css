@@ -3275,14 +3275,15 @@ body {
 }
 /* 每个大分组 */
 .exp-block {
-	margin-bottom: 2.5rem;
+	margin-bottom: 2.2rem;
+	position: relative;
 }
 /* 分组标题 */
 .exp-block-header {
 	font-family: "poppins-semibold", sans-serif;
 	font-size: 1.9rem;
 	color: #313131;
-	margin-bottom: 1.2rem;
+	margin-bottom: 0.6rem;
 	padding-bottom: 0.6rem;
 	border-bottom: 2px solid #f0f0f0;
 }
@@ -3290,29 +3291,59 @@ body {
 	color: #66BAB7;
 	margin-right: 0.8rem;
 }
+/* ---- 时间线竖线（连接所有圆点） ---- */
+.exp-timeline {
+	position: relative;
+	padding-left: 24px;  /* 给竖线和圆点留空间 */
+}
+.exp-timeline::before {
+	content: '';
+	position: absolute;
+	left: 4px;  /* 竖线左边缘 = 圆点中心 - 1px */
+	top: 1.5rem;    /* 与第一个圆点圆心对齐 */
+	bottom: 1.5rem; /* 与最后一个圆点圆心对齐 */
+	width: 2px;
+	background: rgba(102, 186, 183, 0.3);
+	border-radius: 1px;
+}
 /* 每条经历卡片 */
 .exp-card {
-	display: flex;
-	gap: 1.4rem;
-	padding: 1rem 0;
-	border-bottom: 1px solid #f8f8f8;
 	position: relative;
+	padding: 0.7rem 0.8rem 0.7rem 0;
+	border-radius: 6px;
+	transition: background 0.2s;
 }
-.exp-card:last-child {
-	border-bottom: none;
+.exp-card:hover {
+	background: rgba(102, 186, 183, 0.04);
 }
-/* 左侧圆点 */
+/* 左侧圆点 —— 绝对定位到竖线上，样式同 News 时间线 */
 .exp-card-dot {
-	flex-shrink: 0;
-	width: 10px;
-	height: 10px;
+	position: absolute;
+	left: -19px;  /* timeline padding(24px) - 竖线中心(5px) = 19px */
+	top: 1.15rem;
+	width: 8px;
+	height: 8px;
 	border-radius: 50%;
 	background: #66BAB7;
-	margin-top: 0.7rem;
+	z-index: 1;
+	box-shadow: 0 0 0 2px rgba(102, 186, 183, 0.3);
+	transform: translateX(-50%);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-/* 右侧内容 */
+/* 每组第一个圆点略大 */
+.exp-card:first-child .exp-card-dot {
+	width: 10px;
+	height: 10px;
+	box-shadow: 0 0 0 3px rgba(102, 186, 183, 0.25);
+}
+/* hover 时圆点放大 */
+.exp-card:hover .exp-card-dot {
+	transform: translateX(-50%) scale(1.3);
+	box-shadow: 0 0 0 3px rgba(102, 186, 183, 0.4);
+}
+/* 右侧内容（现在是唯一 block child） */
 .exp-card-body {
-	flex: 1;
+	width: 100%;
 }
 /* 顶部：标题 + 日期并排 */
 .exp-card-top {
@@ -3323,37 +3354,49 @@ body {
 }
 .exp-card-title {
 	font-family: "poppins-semibold", sans-serif;
-	font-size: 1.55rem;
+	font-size: 1.5rem;
 	color: #222;
-	margin-bottom: 0.3rem;
+	margin-bottom: 0.1rem;
+	line-height: 1.35;
 }
 .exp-card-org {
-	font-family: "poppins-regular", sans-serif;
-	font-size: 1.35rem;
-	color: #66BAB7;
+	font-family: "poppins-medium", "poppins-regular", sans-serif;
+	font-size: 1.3rem;
+	color: #666;
 }
 .exp-card-date {
 	font-family: "poppins-regular", sans-serif;
-	font-size: 1.25rem;
+	font-size: 1.2rem;
 	color: #aaa;
 	white-space: nowrap;
 	flex-shrink: 0;
-	padding-top: 0.2rem;
+	padding-top: 0.15rem;
 }
 .exp-card-desc {
 	font-family: "lora-regular", serif;
-	font-size: 1.35rem;
-	color: #777;
-	line-height: 1.6;
-	margin-top: 0.3rem;
+	font-size: 1.3rem;
+	color: #888;
+	line-height: 1.5;
+	margin-top: 0.1rem;
 }
-/* Experience 页内链接 */
+/* Experience 页内链接（导师名等可点击链接） */
 .exp-link {
 	color: #66BAB7;
 	text-decoration: none;
 	border-bottom: 1px solid rgba(102,186,183,0.4);
+	transition: border-bottom-color 0.2s;
 }
 .exp-link:hover {
+	border-bottom-color: #66BAB7;
+}
+/* experience.html 内所有 <a> 链接统一样式，确保可点击感知 */
+#experience a[href] {
+	color: #66BAB7;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(102,186,183,0.35);
+	transition: border-bottom-color 0.2s;
+}
+#experience a[href]:hover {
 	border-bottom-color: #66BAB7;
 }
 
@@ -3503,6 +3546,18 @@ body {
 	color: #777;
 	margin-bottom: 0;
 }
+.blog-card-summary {
+	font-family: "lora-regular", serif;
+	font-size: 1.4rem;
+	line-height: 1.75;
+	color: #888;
+	margin-top: 0.6rem;
+	margin-bottom: 0;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;       /* 最多显示2行，超出省略号 */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
 
 /* --- Blog Post Page --- */
 #blog-post {
@@ -3565,14 +3620,31 @@ body {
 	border-bottom-color: #66BAB7;
 }
 .post-body blockquote {
-	border-left: 4px solid #66BAB7;
-	padding: 1rem 0 1rem 2rem;
-	margin: 2rem 0;
-	background: #f9f9f9;
-	border-radius: 0 6px 6px 0;
+	position: relative;
+	border: none;
+	padding: 2rem 2.4rem 2rem 5rem;
+	margin: 2.5rem 0;
+	background: linear-gradient(135deg, rgba(102,186,183,0.06) 0%, rgba(102,186,183,0.02) 100%);
+	border-radius: 8px;
+}
+/* 大引号装饰 */
+.post-body blockquote::before {
+	content: '\201C';
+	position: absolute;
+	left: 1.2rem;
+	top: 0.6rem;
+	font-family: georgia, serif;
+	font-size: 5rem;
+	line-height: 1;
+	color: rgba(102, 186, 183, 0.5);
+	pointer-events: none;
 }
 .post-body blockquote p {
-	color: #555;
+	font-family: georgia, serif;
+	font-style: italic;
+	font-size: 1.6rem;
+	line-height: 1.9;
+	color: #444;
 	margin-bottom: 0;
 }
 .post-body code {
@@ -3818,9 +3890,18 @@ footer.academic-footer .footer-social li a:hover {
 		margin: 0 auto;
 	}
 	/* Experience 移动端 */
+	.exp-timeline {
+		padding-left: 20px;
+	}
+	.exp-card-dot {
+		left: -15px;  /* 移动端 timeline padding(20px) - 竖线中心(5px) */
+	}
 	.exp-card-top {
 		flex-direction: column;
-		gap: 0.3rem;
+		gap: 0.2rem;
+	}
+	.exp-card {
+		padding: 0.5rem 0;
 	}
 	.post-header h1 {
 		font-size: 2.4rem;

@@ -91,26 +91,21 @@
 				}
 
 				posts.forEach(function(post) {
-					// 生成标签 HTML
-					var tagsHtml = '';
-					if (post.tags && post.tags.length > 0) {
-						tagsHtml = '<div class="blog-card-tags">';
-						post.tags.forEach(function(tag) {
-							tagsHtml += '<span>' + tag + '</span>';
-						});
-						tagsHtml += '</div>';
-					}
-
 					// 创建博客卡片
 					var card = document.createElement('a');
 					card.className = 'blog-card';
 					card.href = 'blog-post.html#' + post.slug;
+
+					var summaryHtml = post.summary
+						? '<p class="blog-card-summary">' + post.summary + '</p>'
+						: '';
+
 					card.innerHTML =
 						'<div class="blog-card-meta">' +
 							'<span class="blog-card-date">' + post.date + '</span>' +
-							tagsHtml +
 						'</div>' +
-					'<h3>' + post.title + '</h3>';
+						'<h3>' + post.title + '</h3>' +
+						summaryHtml;
 
 					container.appendChild(card);
 				});

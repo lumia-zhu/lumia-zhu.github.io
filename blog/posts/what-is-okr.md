@@ -12,9 +12,13 @@ OKR是Objective&Key Results（即"目标与关键结果"），简单来说就是
 
 通过OKR,向上可以承接一个组织的使命、愿景、战略，同时向下能启发更底层的项目与任务
 
+![OKR框架层级图](blog/images/what-is-okr-pyramid.png)
+
 # OKR与KPI有什么不同？为什么要使用OKR？
 
 简单来说，OKR是一种目标管理方式，而KPI是一种绩效考核方式。
+
+![OKR与KPI对比](blog/images/what-is-okr-comparison.png)
 
 KPI（Key Performance Indicator 关键绩效指标）是用来衡量某一位员工工作绩效表现的具体量化指标，是对完成工作效果的最直接衡量方式，如在某长视频公司上级布置下来今天二季度销售额达到xxx万元，付费会员数达到xxx人，视频人均播放时长达到xx分钟，从最终的结果是否达成来考察绩效，不关注过程，一切用指标说话。
 
