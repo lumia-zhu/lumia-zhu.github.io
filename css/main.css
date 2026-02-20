@@ -70,6 +70,7 @@ html, body {
 	height: 100%;
 }
 body {
+	zoom: 1.1;
 	background: #FFFFFF;
 	font-family: "lora-regular", serif;
 	font-size: 1.7rem;
