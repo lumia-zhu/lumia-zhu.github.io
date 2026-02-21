@@ -3174,6 +3174,23 @@ body {
 	background: rgba(100, 100, 100, 0.1);
 	color: #666;
 }
+/* Preprint 标签：淡蓝灰 */
+.pub-badge-preprint {
+	background: rgba(100, 130, 160, 0.1);
+	color: #6688aa;
+}
+/* Work-in-Progress 标签：低调小字 */
+.pub-badge-wip {
+	display: inline-block;
+	font-size: 0.72rem;
+	color: #999;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 1px 7px;
+	margin-left: 6px;
+	vertical-align: middle;
+	font-style: italic;
+}
 .pub-badge-year {
 	font-family: "poppins-regular", sans-serif;
 	font-size: 1.1rem;
