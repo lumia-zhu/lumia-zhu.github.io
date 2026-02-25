@@ -3612,18 +3612,25 @@ body {
 .post-body {
 	font-family: "lora-regular", serif;
 	font-size: 1.7rem;
-	line-height: 1.9;
+	line-height: 2.05;
 	color: #444;
+}
+.post-body p {
+	margin-bottom: 1.8rem;
 }
 .post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5 {
 	font-family: "poppins-semibold", sans-serif;
 	color: #313131;
-	margin-top: 3rem;
-	margin-bottom: 1.5rem;
+	margin-top: 3.5rem;
+	margin-bottom: 1.2rem;
 }
 .post-body h1 { font-size: 2.8rem; }
-.post-body h2 { font-size: 2.4rem; }
-.post-body h3 { font-size: 2rem; }
+.post-body h2 {
+	font-size: 2.2rem;
+	padding-bottom: 0.6rem;
+	border-bottom: 1px solid #eee;
+}
+.post-body h3 { font-size: 1.9rem; }
 .post-body img {
 	max-width: 100%;
 	height: auto;
@@ -3636,6 +3643,23 @@ body {
 }
 .post-body a:hover {
 	border-bottom-color: #66BAB7;
+}
+.post-body ul, .post-body ol {
+	margin-bottom: 2rem;
+	padding-left: 2.4rem;
+}
+.post-body ul li, .post-body ol li {
+	margin-bottom: 1rem;
+	line-height: 2;
+}
+.post-body hr {
+	border: none;
+	height: 1px;
+	background: linear-gradient(to right, transparent, #ddd, transparent);
+	margin: 3rem 0;
+}
+.post-body strong {
+	color: #313131;
 }
 .post-body blockquote {
 	position: relative;
@@ -3662,7 +3686,7 @@ body {
 	font-style: italic;
 	font-size: 1.6rem;
 	line-height: 1.9;
-	color: #444;
+	color: #555;
 	margin-bottom: 0;
 }
 .post-body code {
