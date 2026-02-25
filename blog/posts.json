@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "fogg-behavior-model",
+		"title": "用户行为是如何发生的（福格行为模型）",
+		"date": "2026-02-25",
+		"summary": "要让目标行为发生，必须同时满足动机、能力和触发点三个关键要素，而提高能力（让行为变得更简单）往往是最有效的方法。",
+		"tags": ["HCI", "Product"]
+	},
+	{
 		"slug": "new-york-california",
 		"title": "New York is 3 Hours Ahead of California",
 		"date": "2024-03-15",
