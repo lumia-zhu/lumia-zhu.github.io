@@ -50,6 +50,18 @@ html {
 	font-size: 10px;
 }
 
+@media only screen and (min-width:1920px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (min-width:2560px) {
+	html {
+		font-size: 14px;
+	}
+}
+
 @media only screen and (max-width:1024px) {
 	html {
 		font-size: 9.411764705882353px;
@@ -3264,7 +3276,7 @@ body {
 	padding-bottom: 6rem;
 }
 .exp-section-title {
-	max-width: 800px;
+	max-width: 860px;
 	margin: 0 auto 3rem;
 	padding: 0 2rem;
 }
@@ -3287,7 +3299,7 @@ body {
 }
 /* 整体容器 */
 .exp-wrapper {
-	max-width: 800px;
+	max-width: 860px;
 	margin: 0 auto;
 	padding: 0 2rem 4rem;
 }
