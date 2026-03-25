@@ -3312,14 +3312,14 @@ body {
 /* ---- 时间线竖线（连接所有圆点） ---- */
 .exp-timeline {
 	position: relative;
-	padding-left: 24px;  /* 给竖线和圆点留空间 */
+	padding-left: 24px;
 }
 .exp-timeline::before {
 	content: '';
 	position: absolute;
-	left: 4px;  /* 竖线左边缘 = 圆点中心 - 1px */
-	top: 1.5rem;    /* 与第一个圆点圆心对齐 */
-	bottom: 1.5rem; /* 与最后一个圆点圆心对齐 */
+	left: 4px;
+	top: 1.5rem;
+	bottom: 1.5rem;
 	width: 2px;
 	background: rgba(102, 186, 183, 0.3);
 	border-radius: 1px;
@@ -3327,9 +3327,13 @@ body {
 /* 每条经历卡片 */
 .exp-card {
 	position: relative;
-	padding: 0.7rem 0.8rem 0.7rem 0;
+	padding: 0.8rem 0.8rem;
+	margin-bottom: 2rem;
 	border-radius: 6px;
 	transition: background 0.2s;
+}
+.exp-card:last-child {
+	margin-bottom: 0;
 }
 .exp-card:hover {
 	background: rgba(102, 186, 183, 0.04);
@@ -3337,8 +3341,8 @@ body {
 /* 左侧圆点 —— 绝对定位到竖线上，样式同 News 时间线 */
 .exp-card-dot {
 	position: absolute;
-	left: -19px;  /* timeline padding(24px) - 竖线中心(5px) = 19px */
-	top: 1.15rem;
+	left: -19px;
+	top: 1.2rem;
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
@@ -3359,9 +3363,10 @@ body {
 	transform: translateX(-50%) scale(1.3);
 	box-shadow: 0 0 0 3px rgba(102, 186, 183, 0.4);
 }
-/* 右侧内容（现在是唯一 block child） */
+/* 右侧内容 */
 .exp-card-body {
 	width: 100%;
+	min-height: 4.2rem;
 }
 /* 顶部：标题 + 日期并排 */
 .exp-card-top {
@@ -3374,28 +3379,53 @@ body {
 	font-family: "poppins-semibold", sans-serif;
 	font-size: 1.5rem;
 	color: #222;
-	margin-bottom: 0.1rem;
-	line-height: 1.35;
+	margin: 0 0 0.3rem 0;
+	padding: 0;
+	line-height: 1.45;
 }
 .exp-card-org {
 	font-family: "poppins-medium", "poppins-regular", sans-serif;
 	font-size: 1.3rem;
 	color: #666;
+	font-style: italic;
+	line-height: 1.6;
+	margin: 0 0 0.2rem 0;
+	padding: 0;
+}
+.exp-card-meta {
+	flex-shrink: 0;
+	text-align: right;
+	padding-top: 0.15rem;
 }
 .exp-card-date {
 	font-family: "poppins-regular", sans-serif;
 	font-size: 1.2rem;
 	color: #aaa;
 	white-space: nowrap;
-	flex-shrink: 0;
-	padding-top: 0.15rem;
+	line-height: 1.5;
+	margin: 0;
+	display: block;
+}
+.exp-card-location {
+	font-family: "poppins-regular", sans-serif;
+	font-size: 1.1rem;
+	color: #ccc;
+	white-space: nowrap;
+	line-height: 1.5;
+	margin: 0;
+	display: block;
+}
+.exp-card-location i {
+	font-size: 1.0rem;
+	margin-right: 0.2rem;
 }
 .exp-card-desc {
 	font-family: "lora-regular", serif;
 	font-size: 1.3rem;
 	color: #888;
-	line-height: 1.5;
-	margin-top: 0.1rem;
+	line-height: 1.6;
+	margin: 0.2rem 0 0 0;
+	padding: 0;
 }
 /* Experience 页内链接（导师名等可点击链接） */
 .exp-link {
@@ -3941,6 +3971,9 @@ footer.academic-footer .footer-social li a:hover {
 	.exp-card-top {
 		flex-direction: column;
 		gap: 0.2rem;
+	}
+	.exp-card-meta {
+		text-align: left;
 	}
 	.exp-card {
 		padding: 0.5rem 0;
