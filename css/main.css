@@ -3421,15 +3421,11 @@ body {
 .exp-card-location {
 	font-family: "poppins-regular", sans-serif;
 	font-size: 1.1rem;
-	color: #ccc;
+	color: #999;
 	white-space: nowrap;
 	line-height: 1.5;
 	margin: 0;
 	display: block;
-}
-.exp-card-location i {
-	font-size: 1.0rem;
-	margin-right: 0.2rem;
 }
 .exp-card-desc {
 	font-family: "lora-regular", serif;
