@@ -18,7 +18,7 @@
 	<meta name="author" content="Zihao ZHU">
 
 	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
    <link rel="stylesheet" href="css/base.css">  
@@ -39,7 +39,7 @@
    <header>   	
    	<div class="row">
    		<div class="top-bar">
-   			<a class="menu-toggle" href="#"><span>Menu</span></a>
+   			<a class="menu-toggle" href="#" aria-label="Toggle menu" aria-expanded="false"><span>Menu</span></a>
 
 	   		<div class="logo">
 					<a href="index.html">Zihao ZHU</a>
@@ -78,18 +78,18 @@
 				<!-- 社交链接 -->
 				<ul class="profile-links">
 					<li>
-						<a href="https://scholar.google.com/citations?hl=en&user=oMMmYqQAAAAJ" target="_blank" title="Google Scholar">
-							<i class="fa fa-graduation-cap"></i>
+						<a href="https://scholar.google.com/citations?hl=en&user=oMMmYqQAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
+							<i class="fa fa-graduation-cap" aria-hidden="true"></i>
 						</a>
    				</li>
    				<li>
-						<a href="https://github.com/lumia-zhu" target="_blank" title="GitHub">
-							<i class="fa fa-github"></i>
+						<a href="https://github.com/lumia-zhu" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+							<i class="fa fa-github" aria-hidden="true"></i>
 						</a>
    				</li>
    				<li>
-						<a href="https://www.linkedin.com/in/zihao-zhu-6899a52a5/" target="_blank" title="LinkedIn">
-							<i class="fa fa-linkedin"></i>
+						<a href="https://www.linkedin.com/in/zihao-zhu-6899a52a5/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
 						</a>
    				</li>
 				</ul>
@@ -207,31 +207,22 @@
 
 
 	<!-- ========== Lightbox ========== -->
-	<div class="lightbox-overlay" id="lightbox">
-		<button class="lightbox-close" id="lightbox-close">&times;</button>
+	<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+		<button class="lightbox-close" id="lightbox-close" aria-label="Close image preview">&times;</button>
 		<img src="" alt="" id="lightbox-img">
    			</div>
 
-	<!-- ========== Footer ========== -->
-	<footer class="academic-footer">
-     			<ul class="footer-social">        
-			<li><a href="mailto:zihaozhu9-c@my.cityu.edu.hk"><i class="fa fa-envelope"></i></a></li>
-			<li><a href="https://github.com/lumia-zhu" target="_blank"><i class="fa fa-github"></i></a></li>
-			<li><a href="https://www.linkedin.com/in/zihao-zhu-6899a52a5/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-			<li><a href="https://scholar.google.com/citations?hl=en&user=oMMmYqQAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a></li>
-			   </ul> 
-	      	<div class="copyright">
-			<span>&copy; 2026 Zihao ZHU.</span>
-		         </div>		                  
-	</footer>
+	<!-- ========== Footer (由 js/includes.js 注入 inc/footer.html) ========== -->
+	<div data-include="inc/footer.html"></div>
 	<!-- ========== /Footer ========== -->
 
 	<!-- Back to Top -->
 	      	<div id="go-top">
-		         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+		         <a class="smoothscroll" title="Back to Top" href="#top" aria-label="Back to top"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a>
 		      </div>
 
 	<!-- JavaScript -->
+   <script src="js/includes.js"></script>
    <script src="js/jquery-2.1.3.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>

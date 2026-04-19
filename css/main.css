@@ -2674,9 +2674,11 @@ body {
 .exp-block {
 	animation: slideUp 0.4s ease both;
 }
-.exp-block:nth-child(1) { animation-delay: 0.08s; }
-.exp-block:nth-child(2) { animation-delay: 0.15s; }
-.exp-block:nth-child(3) { animation-delay: 0.22s; }
+/* 入场错落动画：两个 meta-group 内 blocks 按顺序浮现 */
+.exp-meta-group:nth-of-type(1) .exp-block:nth-of-type(1) { animation-delay: 0.08s; }
+.exp-meta-group:nth-of-type(1) .exp-block:nth-of-type(2) { animation-delay: 0.15s; }
+.exp-meta-group:nth-of-type(2) .exp-block:nth-of-type(1) { animation-delay: 0.24s; }
+.exp-meta-group:nth-of-type(2) .exp-block:nth-of-type(2) { animation-delay: 0.31s; }
 
 /* Blog 页面入场 */
 .blog-section-title {
@@ -3293,10 +3295,30 @@ body {
 }
 /* 每个大分组 */
 .exp-block {
-	margin-bottom: 2.2rem;
+	margin-bottom: 4rem;
 	position: relative;
 }
-/* 分组标题 */
+.exp-block:last-child {
+	margin-bottom: 0;
+}
+/* ================================================
+ * Meta-group（顶层分组容器，靠「更大留白」隐性分组）
+ *
+ * 把 sections 分成两组：
+ *   组 1 = Education + Industry        (时序/历史)
+ *   组 2 = Academic Service + Teaching (并列/当前)
+ *
+ * 两组之间留 6rem（比同组内的 4rem 大）
+ * → 视觉上自然分块，但不引入可见的"小标题"层级
+ * ================================================ */
+.exp-meta-group {
+	margin-bottom: 6rem;
+}
+.exp-meta-group:last-child {
+	margin-bottom: 0;
+}
+
+/* 分组标题（section 级，如 Education / Teaching） */
 .exp-block-header {
 	font-family: "poppins-semibold", sans-serif;
 	font-size: 1.9rem;
@@ -3423,6 +3445,40 @@ body {
 	margin: 0.2rem 0 0 0;
 	padding: 0;
 }
+/* ================================================
+ * Experience - Flat 变体（并列清单，非时序）
+ *
+ * Academic Service / Teaching 这类内容不是按时间顺序
+ * 递进的，用时间线 + 圆点会产生"先后关系"的误导。
+ * 这个变体去掉时间线装饰，保留卡片样式，
+ * 在同一视觉家族内清晰区分「时序」与「并列」。
+ * ================================================ */
+.exp-timeline--flat {
+	padding-left: 0;
+}
+.exp-timeline--flat::before {
+	display: none;
+}
+.exp-timeline--flat .exp-card-dot {
+	display: none;
+}
+.exp-timeline--flat .exp-card {
+	padding: 1rem 0.8rem;
+	margin-bottom: 0;
+	border-radius: 6px;
+	border-bottom: 1px solid #f5f5f5;
+}
+.exp-timeline--flat .exp-card:last-child {
+	border-bottom: none;
+}
+/* Flat 变体：关闭整卡 hover 高亮
+ * 因为这里一张卡里可能包含多个独立条目（如 Reviewer 下 5 个会议），
+ * 整卡高亮会误导用户以为 "整张卡是一个可点击单元"。
+ * Hover 反应交给内部链接本身（.exp-link 已有 hover 效果）。 */
+.exp-timeline--flat .exp-card:hover {
+	background: transparent;
+}
+
 /* Experience 页内链接（导师名等可点击链接） */
 .exp-link {
 	color: #66BAB7;
@@ -4118,6 +4174,27 @@ a.sel-pub-title:hover {
 .menu-toggle.is-clicked span::before,
 .menu-toggle.is-clicked span::after {
 	background-color: #66BAB7;
+}
+
+
+/* ===================================================================
+ * 键盘焦点样式（可访问性）
+ *
+ * 原 Kards 模板把 a:focus / button:focus 的 outline 全设成了 0，
+ * 导致键盘（Tab）导航用户完全看不见当前焦点在哪里。
+ * 这里用 :focus-visible 只在键盘聚焦时显示轮廓，
+ * 鼠标点击不会出现，兼顾美观和无障碍。
+ * =================================================================== */
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+	outline: 2px solid #66BAB7 !important;
+	outline-offset: 2px;
+	border-radius: 2px;
 }
 
 /*# sourceMappingURL=main.css.map */
