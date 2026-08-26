@@ -36,6 +36,7 @@
  * ------------------------------------------------------------------- 
  */
 @import url("fonts.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
 @import url("font-awesome/css/font-awesome.min.css");
 @import url("micons/micons.css");
 
@@ -1100,6 +1101,7 @@ header .top-bar {
 	justify-content: space-between;
 	background: #FFFFFF;
 	min-width: 220px;
+	height: 66px;
 	min-height: 66px;
 	position: relative;
 	left: 0;
@@ -1112,21 +1114,26 @@ header .logo {
 	float: none;
 	margin: 0;
 	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100%;
 }
 header .logo a {
-	display: block;
+	display: inline-flex;
+	align-items: center;
 	margin: 0;
 	padding: 0;
 	border: none;
 	font-family: "poppins-semibold", sans-serif;
 	font-size: 1.8rem;
+	font-weight: normal;
 	color: #313131;
 	text-shadow: none;
 	width: auto;
 	height: auto;
 	background: none;
 	background-size: auto;
-	line-height: 66px;
+	line-height: 1;
 	letter-spacing: .05rem;
 }
 header .logo a:hover {
@@ -3816,6 +3823,7 @@ header .top-bar {
 	justify-content: space-between;
 	background: #FFFFFF;
 	border-bottom: 1px solid #f0f0f0;
+	height: 66px;
 	min-height: 66px;
 	position: relative;
 	left: 0;
@@ -3825,19 +3833,24 @@ header .top-bar {
 header .logo {
 	float: none;
 	margin: 0;
+	display: flex;
+	align-items: center;
+	height: 100%;
 }
 header .logo a {
-	font: inherit;
 	font-family: "poppins-semibold", sans-serif;
 	font-size: 1.8rem;
+	font-weight: normal;
 	color: #313131;
 	text-shadow: none;
 	width: auto;
 	height: auto;
 	background: none;
 	background-size: auto;
-	line-height: 66px;
+	line-height: 1;
 	letter-spacing: .05rem;
+	display: inline-flex;
+	align-items: center;
 }
 header .logo a:hover {
 	color: #66BAB7;
@@ -3872,22 +3885,35 @@ header .logo a:hover {
 	#main-nav-wrap {
 		position: static;
 		width: auto;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		font-size: 1.4rem;
 	}
 	.main-navigation {
 		display: flex !important;
+		align-items: center;
+		height: 100%;
 		background: transparent;
 		padding: 0;
 		border: none;
 		gap: 0;
 	}
 	.main-navigation > li {
-		display: inline-block;
+		display: flex;
+		align-items: center;
+		height: 100%;
 	}
 	.main-navigation li a {
 		color: #555;
 		padding: 0 1.5rem;
-		line-height: 66px;
+		line-height: 1;
 		font-size: 1.4rem;
+		font-family: "poppins-medium", sans-serif;
+		font-weight: normal;
+		height: auto;
+		display: inline-flex;
+		align-items: center;
 	}
 	.main-navigation li a:hover {
 		color: #66BAB7;
