@@ -22,8 +22,9 @@
 
 	<!-- CSS -->
    <link rel="stylesheet" href="css/base.css">  
-   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/main.css?v=20260915-teaching">
    <link rel="stylesheet" href="css/vendor.css">
+   <link rel="stylesheet" href="css/home.css">
 
 	<!-- Favicons -->
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -47,9 +48,8 @@
 
 		   	<nav id="main-nav-wrap">
 					<ul class="main-navigation">
-						<li class="current"><a href="index.html">Home</a></li>
+						<li class="current"><a href="index.html" aria-current="page">Home</a></li>
 						<li><a href="publications.html">Publications</a></li>
-						<li><a href="experience.html">Experience</a></li>
 						<li><a href="blog.html">Blog</a></li>
 					</ul>
 				</nav>    		
@@ -99,36 +99,36 @@
 					</li>
 				</ul>
 
-			<!-- Recent News 时间轴 -->
+			<!-- News & Travel 时间轴 -->
 				<div class="news-widget">
-					<h2 class="news-widget-title">Recent News</h2>
+					<h2 class="news-widget-title">News &amp; Travel</h2>
 					<ul class="news-timeline">
 						<li class="news-timeline-item">
 							<span class="news-timeline-dot"></span>
 							<div class="news-timeline-content">
-								<span class="news-timeline-date">2026.01</span>
-								<span class="news-timeline-text">One paper accepted to CHI' 26.<br>See you in Barcelona!</span>
+								<span class="news-timeline-date">2026.04</span>
+								<span class="news-timeline-text">Presenting our work at CHI 2026 in Barcelona.</span>
    		</div>
 				   </li>
 						<li class="news-timeline-item">
 							<span class="news-timeline-dot"></span>
 							<div class="news-timeline-content">
 								<span class="news-timeline-date">2025.05</span>
-								<span class="news-timeline-text">One paper accepted to IJHCS.</span>
+								<span class="news-timeline-text">Our paper was accepted to IJHCS!</span>
 							</div>
 				   </li>
 						<li class="news-timeline-item">
 							<span class="news-timeline-dot"></span>
 							<div class="news-timeline-content">
 								<span class="news-timeline-date">2025.04</span>
-								<span class="news-timeline-text">Assisted in organizing <a href="https://gbahci.com/prechi2025/" target="_blank" class="news-link">GBA Pre-CHI 2025</a> as student volunteer chair.</span>
+								<span class="news-timeline-text">Helped organize <a href="https://gbahci.com/prechi2025/" target="_blank" class="news-link">GBA Pre-CHI 2025</a> as student volunteer chair.</span>
 							</div>
 				   </li>
 						<li class="news-timeline-item">
 							<span class="news-timeline-dot"></span>
 							<div class="news-timeline-content">
-								<span class="news-timeline-date">2025.01</span>
-								<span class="news-timeline-text">One paper accepted to CHI' 25.</span>
+								<span class="news-timeline-date">2025.04</span>
+								<span class="news-timeline-text">Presenting our work at CHI 2025 in Yokohama.</span>
 							</div>
 				   </li>
 					</ul>
@@ -160,7 +160,10 @@
 
 				<!-- ===== Selected Publications ===== -->
 				<div class="selected-pubs">
-					<h3 class="selected-pubs-title">Selected Publications</h3>
+					<div class="home-section-heading">
+                        <h2 class="selected-pubs-title home-section-title">Selected Publications</h2>
+                        <a href="publications.html" class="sel-pub-more">View all publications</a>
+                    </div>
 
 			<!-- CHI 2026 -->
 			<div class="sel-pub-item">
@@ -201,8 +204,286 @@
 							</div>
                   </div>
 
-					<a href="publications.html" class="sel-pub-more">View All Publications</a>
-      		</div>
+				</div>
+
+                <!-- Independent homepage background sections. -->
+                <div id="experience" class="home-experience">
+		<div class="exp-wrapper">
+
+			<!-- ===== Education ===== -->
+			<section class="exp-block" aria-labelledby="home-section-1">
+				<h2 id="home-section-1" class="exp-block-header">Education</h2>
+				<div class="exp-timeline">
+
+					<!-- CityU PhD -->
+					<div class="exp-card">
+						<div class="exp-card-dot"></div>
+						<div class="exp-card-body">
+							<div class="exp-card-top">
+								<div>
+									<h3 class="exp-card-title">City University of Hong Kong</h3>
+									<p class="exp-card-org">Doctor of Philosophy in Computer Science</p>
+								</div>
+								<div class="exp-card-meta">
+									<span class="exp-card-date">Sep 2024 – Present</span>
+									<span class="exp-card-location">Hong Kong SAR, China</span>
+								</div>
+							</div>
+							<p class="exp-card-desc">Supervisor: <a href="https://yuhanlolo.github.io/me/" target="_blank">Prof. Yuhan LUO</a></p>
+						</div>
+					</div>
+
+					<!-- HKUST(GZ) MPhil -->
+					<div class="exp-card">
+						<div class="exp-card-dot"></div>
+						<div class="exp-card-body">
+							<div class="exp-card-top">
+								<div>
+									<h3 class="exp-card-title">The Hong Kong University of Science and Technology (Guangzhou)</h3>
+									<p class="exp-card-org">Master of Philosophy in Computational Media and Arts</p>
+								</div>
+								<div class="exp-card-meta">
+									<span class="exp-card-date">Sep 2022 – Aug 2024</span>
+									<span class="exp-card-location">Guangzhou, China</span>
+								</div>
+							</div>
+							<p class="exp-card-desc">Supervisor: <a href="https://panhui.people.ust.hk/" target="_blank">Prof. Pan HUI</a> &amp; <a href="https://zeng-wei.com/" target="_blank">Prof. Wei ZENG</a></p>
+						</div>
+					</div>
+
+					<!-- BUPT Bachelor -->
+					<div class="exp-card">
+						<div class="exp-card-dot"></div>
+						<div class="exp-card-body">
+							<div class="exp-card-top">
+								<div>
+									<h3 class="exp-card-title">Beijing University of Posts and Telecommunications</h3>
+									<p class="exp-card-org">Bachelor of Management in E-Commerce with Law</p>
+								</div>
+								<div class="exp-card-meta">
+									<span class="exp-card-date">Sep 2018 – Jun 2022</span>
+									<span class="exp-card-location">Beijing, China</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- QMUL Bachelor -->
+					<div class="exp-card">
+						<div class="exp-card-dot"></div>
+						<div class="exp-card-body">
+							<div class="exp-card-top">
+								<div>
+									<h3 class="exp-card-title">Queen Mary University of London</h3>
+									<p class="exp-card-org">Bachelor of Engineering in E-Commerce with Law</p>
+								</div>
+								<div class="exp-card-meta">
+									<span class="exp-card-date">Sep 2018 – Jun 2022</span>
+									<span class="exp-card-location">London, UK</span>
+								</div>
+							</div>
+							<p class="exp-card-desc">First Class Honours</p>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- ===== Industry Experience ===== -->
+			<section class="exp-block" aria-labelledby="home-section-2">
+				<h2 id="home-section-2" class="exp-block-header">Industry Experience</h2>
+				<div class="exp-timeline">
+
+					<!-- Meituan -->
+					<div class="exp-card">
+						<div class="exp-card-dot"></div>
+						<div class="exp-card-body">
+							<div class="exp-card-top">
+								<div>
+									<h3 class="exp-card-title">Meituan Corporation</h3>
+									<p class="exp-card-org">Data Product Manager Intern</p>
+								</div>
+								<div class="exp-card-meta">
+									<span class="exp-card-date">Jan 2022 – Jun 2022</span>
+									<span class="exp-card-location">Beijing, China</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Xiaomi -->
+					<div class="exp-card">
+						<div class="exp-card-dot"></div>
+						<div class="exp-card-body">
+							<div class="exp-card-top">
+								<div>
+									<h3 class="exp-card-title">Xiaomi Corporation</h3>
+									<p class="exp-card-org">Data Analyst Intern</p>
+								</div>
+								<div class="exp-card-meta">
+									<span class="exp-card-date">Jan 2021 – Mar 2021</span>
+									<span class="exp-card-location">Beijing, China</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- ===== Academic Service ===== -->
+			<!-- 使用 .exp-timeline--flat 变体：并列清单、无时间线 -->
+			<section class="exp-block home-awards" aria-labelledby="home-section-5">
+            <h2 id="home-section-5" class="exp-block-header">Honors &amp; Awards</h2>
+            <ul class="exp-timeline exp-timeline--flat home-award-list">
+                <li class="exp-card">
+                    <div class="exp-card-body">
+                        <div class="exp-card-top">
+                            <div>
+                                <h3 class="exp-card-title">CityUHK Research Tuition Scholarship</h3>
+                            </div>
+                            <div class="exp-card-meta">
+                                <span class="exp-card-date">Sep 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="exp-card">
+                    <div class="exp-card-body">
+                        <div class="exp-card-top">
+                            <div>
+                                <h3 class="exp-card-title">BUPT Student Innovation and Entrepreneurship Achievement Exhibition</h3>
+                            <p class="exp-card-org">First Prize</p>
+                            </div>
+                            <div class="exp-card-meta">
+                                <span class="exp-card-date">Jun 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="exp-card">
+                    <div class="exp-card-body">
+                        <div class="exp-card-top">
+                            <div>
+                                <h3 class="exp-card-title">“Challenge Cup” Capital University Students’ Extracurricular Academic Science and Technology Works Competition</h3>
+                            <p class="exp-card-org">Second Prize</p>
+                            </div>
+                            <div class="exp-card-meta">
+                                <span class="exp-card-date">May 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="exp-card">
+                    <div class="exp-card-body">
+                        <div class="exp-card-top">
+                            <div>
+                                <h3 class="exp-card-title">China International College Students’ “Internet+” Innovation and Entrepreneurship Competition</h3>
+                            <p class="exp-card-org">National Silver Award</p>
+                            </div>
+                            <div class="exp-card-meta">
+                                <span class="exp-card-date">Nov 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="exp-card">
+                    <div class="exp-card-body">
+                        <div class="exp-card-top">
+                            <div>
+                                <h3 class="exp-card-title">“Challenge Cup” Capital College Student Business Plan Competition</h3>
+                            <p class="exp-card-org">Silver Award</p>
+                            </div>
+                            <div class="exp-card-meta">
+                                <span class="exp-card-date">Sep 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="exp-card">
+                    <div class="exp-card-body">
+                        <div class="exp-card-top">
+                            <div>
+                                <h3 class="exp-card-title">BUPT Merit Scholarship</h3>
+                            <p class="exp-card-org">Awarded three times</p>
+                            </div>
+                            <div class="exp-card-meta">
+                                <span class="exp-card-date">2019–2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+			<!-- ===== Teaching ===== -->
+			<!-- 使用 .exp-timeline--flat 变体：并列清单、无时间线 -->
+			<section class="exp-block" aria-labelledby="home-section-4">
+                <h2 id="home-section-4" class="exp-block-header">Teaching</h2>
+                <div class="exp-timeline exp-timeline--flat teaching-by-role">
+                <div class="exp-card">
+                    <div class="exp-card-body">
+                        <h3 class="exp-card-title teaching-role-title">Lab Tutor</h3>
+                        <div class="exp-card-top teaching-course-row">
+                            <div><p class="exp-card-org teaching-course-name">CS1102: Introduction to Computer Studies</p></div>
+                            <div class="exp-card-meta"><span class="exp-card-date">Fall 2025, Fall 2026</span></div>
+                        </div>
+                        <div class="exp-card-top teaching-course-row">
+                            <div><p class="exp-card-org teaching-course-name">CS2204: Fundamentals of Internet Applications Development</p></div>
+                            <div class="exp-card-meta"><span class="exp-card-date">Spring 2026</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-card-body">
+                        <h3 class="exp-card-title teaching-role-title">Teaching Assistant</h3>
+                        <div class="exp-card-top teaching-course-row">
+                            <div><p class="exp-card-org teaching-course-name">CS1102: Introduction to Computer Studies</p></div>
+                            <div class="exp-card-meta"><span class="exp-card-date">Fall 2024</span></div>
+                        </div>
+                        <div class="exp-card-top teaching-course-row">
+                            <div><p class="exp-card-org teaching-course-name">CS2204: Fundamentals of Internet Applications Development</p></div>
+                            <div class="exp-card-meta"><span class="exp-card-date">Spring 2025</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+
+        <section class="exp-block home-service" aria-labelledby="home-section-3">
+				<h2 id="home-section-3" class="exp-block-header">Academic Service</h2>
+				<div class="exp-timeline exp-timeline--flat">
+
+					<!-- Reviewer -->
+					<div class="exp-card">
+						<div class="exp-card-body">
+							<div class="exp-card-top">
+								<div>
+									<h3 class="exp-card-title">Reviewer</h3>
+								</div>
+							</div>
+							<p class="exp-card-desc">CHI 2025, CHI 2025 LBW, CHI 2025 SRC, CHI 2026, DIS 2026</p>
+						</div>
+					</div>
+
+					<!-- Student Volunteer Chair -->
+					<div class="exp-card">
+						<div class="exp-card-body">
+							<div class="exp-card-top">
+								<div>
+									<h3 class="exp-card-title">Student Volunteer Chair</h3>
+								</div>
+							</div>
+							<p class="exp-card-desc">GBA Pre-CHI 2025</p>
+						</div>
+					</div>
+
+				</div>
+			</section>
+		</div> <!-- /exp-wrapper -->
+                </div>
+
 
    			</div>
 

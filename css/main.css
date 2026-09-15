@@ -4224,3 +4224,18 @@ select:focus-visible,
 }
 
 /*# sourceMappingURL=main.css.map */
+/* Teaching follows the CV: role first, then courses with their own terms. */
+.teaching-by-role .exp-card-title.teaching-role-title {
+    font-family: "poppins-semibold", sans-serif;
+    font-size: 1.4rem;
+    color: #444;
+    margin-bottom: .8rem;
+}
+.teaching-by-role .teaching-course-row + .teaching-course-row { margin-top: .8rem; }
+.teaching-by-role .teaching-course-name {
+    font-family: "poppins-regular", sans-serif;
+    font-size: 1.3rem;
+    font-style: normal;
+    line-height: 1.6;
+    margin: 0;
+}

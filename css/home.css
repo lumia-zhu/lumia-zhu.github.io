@@ -1,0 +1,199 @@
+/* Homepage layout and scoped refinements. */
+.profile-info { min-width: 0; }
+/* Keep the narrow news column readable without stretching word spacing. */
+.news-widget .news-timeline-item { padding-left: 0; }
+.news-widget .news-timeline-text {
+    text-align: left;
+    text-wrap: pretty;
+}
+.news-widget .news-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #aaa;
+}
+.news-widget .news-link:is(:hover, :focus-visible) {
+    color: #444;
+    border-bottom-color: #666;
+}
+.home-section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .8rem 1.6rem;
+    margin-bottom: 1.6rem;
+    padding-bottom: .8rem;
+    border-bottom: 0;
+    text-align: left;
+}
+/* Shared typography for the experience sections. */
+.home-experience .exp-block-header {
+    font-family: "poppins-semibold", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.6rem;
+    color: #313131;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1.5;
+}
+.home-section-heading .home-section-title { margin: 0; line-height: 1.5; }
+.home-section-heading .sel-pub-more {
+    margin: 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color .2s ease;
+}
+.selected-pubs {
+    text-align: left;
+    margin-top: 3.2rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid #e6eeed;
+}
+.home-section-heading .sel-pub-more:is(:hover, :focus-visible) {
+    color: #66BAB7;
+    text-decoration: none;
+}
+.selected-pubs .sel-pub-title:is(:hover, :focus-visible) {
+    color: #418582;
+    text-decoration: underline;
+    text-underline-offset: .3rem;
+}
+.selected-pubs .pub-links li a:focus-visible {
+    color: #fff;
+    background: #66BAB7;
+}
+.selected-pubs .sel-pub-item { padding: 1.8rem 0; border-bottom: 0; }
+/* Compact labels with deliberate gaps; keep the original paper typography. */
+.selected-pubs .sel-pub-body {
+    display: flex;
+    flex-direction: column;
+}
+.selected-pubs .sel-pub-body .pub-badge {
+    align-self: flex-start;
+    line-height: 1.8;
+    /* Optical centering for Poppins capitals; preserve the total label height. */
+    padding: .3rem .7rem .1rem;
+    margin-bottom: .8rem;
+}
+.selected-pubs .sel-pub-title { margin-bottom: .7rem; }
+.selected-pubs .sel-pub-authors { margin-bottom: 1.1rem; }
+/* Label (2.2rem) + gap (.8rem) places the image at the title's first line. */
+.selected-pubs .sel-pub-thumb { margin-top: 3rem; }
+.selected-pubs .sel-pub-thumb img {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: #fff;
+}
+#experience.home-experience {
+    margin-top: 4rem;
+    padding: 2.8rem 0 0;
+    border-top: 0;
+    background: transparent;
+    text-align: left;
+    scroll-margin-top: 10rem;
+}
+.home-experience .exp-wrapper { max-width: none; padding: 0; }
+.home-experience .exp-block { margin-bottom: 3.4rem; }
+.home-experience .exp-block:last-child { margin-bottom: 0; }
+.home-experience .exp-block-header {
+    position: relative;
+    padding-left: 1.3rem;
+    padding-bottom: .8rem;
+    margin-bottom: 1.3rem;
+    border-bottom: 1px solid #e6eeed;
+}
+/* A slim marker identifies each heading; the divider stays neutral. */
+.home-experience .exp-block-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .25em;
+    width: 3px;
+    height: 1em;
+    border-radius: 1px;
+    background: #66BAB7;
+    pointer-events: none;
+}
+.home-experience .exp-card { padding: .7rem .4rem; margin-bottom: 1.2rem; }
+.home-experience .exp-card:last-child { margin-bottom: 0; }
+.home-experience .exp-card-title,
+.home-experience .teaching-by-role .teaching-role-title {
+    font-family: "poppins-medium", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #444;
+}
+.home-experience .exp-card-org,
+.home-experience .exp-card-desc {
+    font-family: "poppins-regular", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #666;
+}
+/* Preserve the original distinctions for degrees, roles, awards, and notes. */
+.home-experience .exp-card-org:not(.teaching-course-name) {
+    font-family: "poppins-medium", "poppins-regular", sans-serif;
+    font-style: italic;
+}
+.home-experience .exp-timeline:not(.exp-timeline--flat) .exp-card-desc {
+    font-family: "lora-regular", serif;
+    color: #737373;
+}
+.home-experience .exp-card-top { gap: 1.4rem; }
+.home-experience .exp-card-top > div:first-child { min-width: 0; }
+.home-experience .exp-card-date,
+.home-experience .exp-card-location {
+    font-family: "poppins-regular", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #777;
+}
+.home-experience .exp-card-desc a { color: #418582; }
+.home-experience .exp-timeline--flat .exp-card {
+    border-bottom: 0;
+    padding: .7rem 0 1.2rem;
+}
+.home-experience .exp-timeline--flat .exp-card:last-child { border-bottom: 0; }
+/* Compact awards, with a consistent date column and natural row heights. */
+.home-award-list { list-style: none; margin: 0; padding: 0; }
+.home-experience .home-award-list .exp-card {
+    padding: .6rem 0 1rem;
+    margin-bottom: .8rem;
+}
+.home-experience .home-award-list .exp-card:last-child { margin-bottom: 0; }
+.home-award-list .exp-card-body { min-height: 0; }
+.home-award-list .exp-card-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 7.2rem;
+    column-gap: 1.8rem;
+}
+.home-award-list .exp-card-title { text-wrap: pretty; }
+.home-award-list .exp-card-title:only-child { margin-bottom: 0; }
+.home-award-list .exp-card-org { margin-bottom: 0; }
+.home-experience a:focus-visible, .selected-pubs a:focus-visible {
+    outline: 2px solid #418582;
+    outline-offset: 4px;
+}
+@media (max-width: 1000px) {
+    .home-award-list .exp-card-top { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+}
+@media (min-width: 769px) and (max-width: 1000px) {
+    .home-experience .exp-card-top { flex-direction: column; gap: .3rem; }
+    .home-experience .exp-card-meta { text-align: left; }
+}
+@media (max-width: 600px) {
+    .home-section-heading { align-items: flex-start; flex-direction: column; }
+    #experience.home-experience { margin-top: 3rem; padding-top: 2.4rem; }
+    .home-experience .exp-card-top { gap: .4rem; }
+}
