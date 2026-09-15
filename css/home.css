@@ -104,7 +104,7 @@
 /* Label (2.2rem) + gap (.8rem) places the image at the title's first line. */
 .selected-pubs .sel-pub-thumb { margin-top: 3rem; }
 .selected-pubs .sel-pub-thumb img {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 2 / 1;
     object-fit: contain;
     background: #fff;
 }
@@ -319,4 +319,29 @@
 @media (min-width: 1020px) {
     .profile-section { max-width: 1020px; }
     .profile-left { width: 260px; }
+}
+
+/* A visible, keyboard-accessible entry to each full publication figure. */
+.selected-pubs .figure-preview {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    color: #666;
+    font-family: "poppins-regular", sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-transform: none;
+    cursor: zoom-in;
+}
+.selected-pubs .figure-preview:hover { color: #418582; }
+.selected-pubs .figure-preview:focus-visible {
+    outline: 2px solid #418582;
+    outline-offset: -2px;
 }

@@ -69,9 +69,10 @@
 	var $lightboxImg = $('#lightbox-img');
 
 	// 点击任意 .pub-thumb 或 .sel-pub-thumb 内的图片 → 打开弹窗
-	$(document).on('click', '.pub-thumb img, .sel-pub-thumb img', function() {
-		var src = $(this).attr('src');
-		var alt = $(this).attr('alt');
+	$(document).on('click', '.pub-thumb img, .sel-pub-thumb .figure-preview', function() {
+		var $image = $(this).is('img') ? $(this) : $(this).find('img');
+		var src = $image.attr('src');
+		var alt = $image.attr('alt');
 		$lightboxImg.attr('src', src).attr('alt', alt);
 		$lightbox.addClass('is-open');
 		$('body').css('overflow', 'hidden'); // 禁止背景滚动
