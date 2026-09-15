@@ -1,5 +1,27 @@
 /* Homepage layout and scoped refinements. */
 .profile-info { min-width: 0; }
+.profile-left .news-widget {
+    width: calc(100% - 2.4rem);
+    border-top: 0;
+}
+.news-widget .news-timeline { padding-left: 1.8rem; }
+.news-widget .news-timeline::before { left: 0; }
+.news-widget .news-timeline-dot { left: calc(-1.8rem + 1px); }
+.news-widget .news-widget-title {
+    position: relative;
+    margin-bottom: 1.2rem;
+}
+.news-widget .news-widget-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -.7rem;
+    width: 32px;
+    height: 2px;
+    border-radius: 1px;
+    background: #66BAB7;
+    transform: translateX(-50%);
+}
 /* Keep the narrow news column readable without stretching word spacing. */
 .news-widget .news-timeline-item { padding-left: 0; }
 .news-widget .news-timeline-text {
@@ -47,9 +69,9 @@
 }
 .selected-pubs {
     text-align: left;
-    margin-top: 3.2rem;
-    padding-top: 2.4rem;
-    border-top: 1px solid #e6eeed;
+    margin-top: 2.8rem;
+    padding-top: 0;
+    border-top: 0;
 }
 .home-section-heading .sel-pub-more:is(:hover, :focus-visible) {
     color: #66BAB7;
@@ -196,4 +218,105 @@
     .home-section-heading { align-items: flex-start; flex-direction: column; }
     #experience.home-experience { margin-top: 3rem; padding-top: 2.4rem; }
     .home-experience .exp-card-top { gap: .4rem; }
+}
+
+/* A quiet invitation between the bio and selected papers. */
+.collaboration-note {
+    display: flex;
+    align-items: flex-start;
+    gap: .9rem;
+    margin-top: 2.4rem;
+    padding: 1.3rem 1.6rem;
+    border: 1px solid #cbe5e2;
+    border-radius: 6px;
+    background: #f2f9f8;
+    text-align: left;
+}
+.collaboration-note-icon {
+    flex: 0 0 auto;
+    font-size: 1.7rem;
+    line-height: 2.21rem;
+}
+.collaboration-note p {
+    min-width: 0;
+    margin: 0;
+    font-family: "poppins-regular", sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #4c5b59;
+}
+.collaboration-note a {
+    display: block;
+    width: fit-content;
+    margin-top: .5rem;
+    white-space: nowrap;
+    color: #367d79;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+.collaboration-note a:is(:hover, :focus-visible) { color: #245d59; }
+.collaboration-note a:focus-visible {
+    outline: 2px solid #418582;
+    outline-offset: 4px;
+}
+
+/* Center the compact contact group beneath the profile details. */
+.profile-left .profile-links {
+    display: grid;
+    width: max-content;
+    max-width: 100%;
+    grid-template-columns: max-content max-content;
+    column-gap: 1.2rem;
+    row-gap: .1rem;
+    margin-top: -1rem;
+    margin-inline: auto;
+    justify-content: center;
+}
+.profile-left .news-widget {
+    margin-top: .6rem;
+    padding-top: 0;
+}
+@media (max-width: 768px) {
+    .profile-left .profile-links { margin-top: .2rem; }
+}
+.profile-left .profile-links li { margin: 0; }
+.profile-left .profile-links li a {
+    justify-content: flex-start;
+    gap: .5rem;
+    padding: .2rem .3rem;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    font-family: "poppins-regular", sans-serif;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    white-space: nowrap;
+    transition: color .2s ease, background-color .2s ease;
+}
+.profile-left .profile-links li a i {
+    flex: 0 0 1.4rem;
+    width: 1.4rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.profile-left .profile-links li a:is(:hover, :focus-visible) {
+    color: #418582;
+    background: #edf7f6;
+    transform: none;
+}
+.profile-left .profile-links li a:focus-visible {
+    outline: 2px solid #418582;
+    outline-offset: 3px;
+}
+
+/* Balance the desktop sidebar against the wider main content. */
+@media (min-width: 769px) {
+    .profile-photo img { width: 173px; height: 173px; }
+}
+@media (min-width: 1020px) {
+    .profile-section { max-width: 1020px; }
+    .profile-left { width: 260px; }
 }
