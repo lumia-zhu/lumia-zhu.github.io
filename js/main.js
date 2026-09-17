@@ -24,17 +24,60 @@
 	toggleButton.on('click', function(e) {
 		e.preventDefault();
 		toggleButton.toggleClass('is-clicked');
-		nav.slideToggle();
+		toggleButton.attr('aria-expanded', toggleButton.hasClass('is-clicked'));
+		nav.stop(true, true).slideToggle();
 	});
 
 	// 点击导航链接后关闭菜单（移动端）
 	nav.find('li a').on("click", function() {
 		// 仅在移动端（菜单按钮可见时）关闭菜单
 		if (toggleButton.is(':visible')) {
-			toggleButton.toggleClass('is-clicked');
-			nav.fadeOut();
+			toggleButton.removeClass('is-clicked').attr('aria-expanded', 'false');
+			nav.stop(true, true).hide();
 		}
 	});
+
+
+	/* Highlight the homepage section without changing other pages' navigation. */
+	var experience = document.querySelector('#experience.home-experience');
+	if (experience) {
+		var homeLink = nav.find('a[href="#top"]');
+		var experienceLink = nav.find('a[href="#experience"]');
+		var framePending = false;
+
+		function updateSectionNavigation() {
+			framePending = false;
+			var bounds = experience.getBoundingClientRect();
+			var offset = parseFloat(window.getComputedStyle(experience).scrollMarginTop) || 100;
+			// Match viewport coordinates when the page uses CSS zoom.
+			offset *= bounds.height / experience.offsetHeight;
+			var inExperience = bounds.top <= offset + 4 && bounds.bottom > offset;
+			homeLink.parent().toggleClass('current', !inExperience);
+			experienceLink.parent().toggleClass('current', inExperience);
+			homeLink.add(experienceLink).removeAttr('aria-current');
+			(inExperience ? experienceLink : homeLink).attr('aria-current', 'location');
+		}
+
+		function scheduleSectionNavigation() {
+			if (!framePending) {
+				framePending = true;
+				window.requestAnimationFrame(updateSectionNavigation);
+			}
+		}
+
+		window.addEventListener('scroll', scheduleSectionNavigation, { passive: true });
+		window.addEventListener('resize', scheduleSectionNavigation);
+		window.addEventListener('hashchange', scheduleSectionNavigation);
+		window.addEventListener('pageshow', scheduleSectionNavigation);
+		window.addEventListener('load', function() {
+			// Align deep links after images have settled, keeping the fixed header clear.
+			if (window.location.hash === '#experience') {
+				experience.scrollIntoView({ behavior: 'instant', block: 'start' });
+			}
+			updateSectionNavigation();
+		});
+		updateSectionNavigation();
+	}
 
 
 	/*----------------------------------------------------- */
