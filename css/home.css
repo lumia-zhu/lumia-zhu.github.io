@@ -198,6 +198,11 @@
     column-gap: 1.8rem;
 }
 .home-award-list .exp-card-title { text-wrap: pretty; }
+.home-award-list .exp-card-note {
+    font-family: "poppins-regular", sans-serif;
+    font-weight: normal;
+    color: #666;
+}
 .home-award-list .exp-card-title:only-child { margin-bottom: 0; }
 .home-award-list .exp-card-org { margin-bottom: 0; }
 .home-experience a:focus-visible, .selected-pubs a:focus-visible {
