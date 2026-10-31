@@ -189,10 +189,9 @@
 .home-experience .home-award-list .exp-card {
     padding: 1rem 0;
     margin-bottom: 0;
-    border-bottom: 1px solid #edf1ef;
+    border-bottom: 0;
     border-radius: 0;
 }
-.home-experience .home-award-list .exp-card:last-child { border-bottom: 0; }
 .home-award-list .exp-card-body { min-height: 0; }
 .home-award-list .exp-card-top {
     display: grid;
