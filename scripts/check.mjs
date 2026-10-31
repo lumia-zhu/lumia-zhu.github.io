@@ -41,7 +41,7 @@ for (const file of files) {
   }
 }
 const css = await readFile(path.join(root, 'css/main.css'), 'utf8');
-for (const [, value] of css.matchAll(/@import url\("([^"]+)"\)/g)) await access(path.join(root, 'css', value));
+for (const [, value] of css.matchAll(/@import url\("([^"]+)"\)/g)) await access(path.join(root, 'css', value.split('?')[0]));
 const fonts = await readFile(path.join(root, 'css/fonts.css'), 'utf8');
 for (const [, value] of fonts.matchAll(/url\(['"]([^'"]+)['"]\)/g)) await access(path.resolve(root, 'css', value));
 console.log(`Checked ${files.length} complete HTML pages, ${links} local links, heading order, and font assets.`);
