@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}} - Zihao ZHU</title>
+  <meta name="description" content="{{summary}}">
+  <meta name="author" content="Zihao ZHU">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/main.css">
+  {{codeStyles}}
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYVVC589D7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YYVVC589D7');
+  </script>
+  <script defer src="/js/site.js"></script>
+</head>
+<body id="top">
+  <header>
+    <div class="row"><div class="top-bar">
+      <a class="menu-toggle" href="#" aria-label="Toggle menu" aria-expanded="false"><span>Menu</span></a>
+      <div class="logo"><a href="/index.html">Zihao ZHU</a></div>
+      <nav id="main-nav-wrap" aria-label="Main navigation" lang="en">
+        <ul class="main-navigation">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/index.html#experience">Experience</a></li>
+          <li><a href="/publications.html">Publications</a></li>
+          <li class="current"><a href="/blog.html" aria-current="page">Blog</a></li>
+        </ul>
+      </nav>
+    </div></div>
+  </header>
+  <main id="blog-post">
+    <article class="post-container">
+      <div class="post-header">
+        <h1>{{title}}</h1>
+        <div class="post-meta">
+          <time class="date" datetime="{{date}}">{{date}}</time>
+          <span>{{tags}}</span>
+        </div>
+      </div>
+      <div class="post-body">
+        {{body}}
+      </div>
+      <div class="post-back" lang="en"><a href="/blog.html">&larr; Back to Blog</a></div>
+    </article>
+  </main>
+  <div data-include="inc/footer.html"></div>
+  <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top" aria-label="Back to top"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a></div>
+</body>
+</html>

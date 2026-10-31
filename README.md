@@ -1,73 +1,59 @@
-# Zihao ZHU - Personal Academic Homepage
+# Zihao ZHU — Personal Academic Homepage
 
-Zihao ZHU 的个人学术主页，基于 Kards 模板改造，简洁美观且支持响应式布局。
+Static academic website hosted at <https://lumia-zhu.github.io/>. The existing HTML/CSS design is retained; Markdown articles are rendered during publication.
 
-## 📁 项目结构
+## Local preview
 
-```
-personalpage/
-├── index.html              # 🏠 主页（头像 + Bio + News）
-├── publications.html       # 📝 论文发表页（CHI'26, IJHCS, CHI'25）
-├── experience.html         # 💼 经历页（教育/研究/服务时间线）
-├── blog.html               # 📰 博客列表页
-├── blog-post.html          # 📄 博客文章详情页（Markdown 渲染）
-├── blog/
-│   ├── posts.json          # 博客文章元数据
-│   └── posts/              # Markdown 博客文章
-│       ├── new-york-california.md
-│       ├── why-we-procrastinate.md
-│       └── what-is-okr.md
-├── css/                    # 样式文件
-├── js/                     # JavaScript 文件
-├── images/                 # 图片资源
-│   └── profile-pic.jpg     # 个人头像（请替换）
-└── fonts/                  # 字体文件
+With Node.js 22 or newer and Python 3 installed:
+
+```sh
+npm ci
+npm run build
+npm run check
+npm run preview
 ```
 
-## 🎨 主题色
+Open <http://127.0.0.1:8765/>. `_site/` is generated output and is not committed. The checker verifies local pages, images, paper links, headings, and fonts.
 
-- 主色调：`#66BAB7`（清新薄荷绿）
-- 深色调：`#4F9A97`（悬停效果）
+## Publish a blog article
 
-## 📝 如何发布新博客文章
+1. Add the article to `blog/posts/my-post.md` using Markdown.
+2. Add its metadata to `blog/posts.json`:
 
-1. 在 `blog/posts/` 目录下创建一个新的 `.md` 文件
-2. 用 Markdown 格式写好文章内容
-3. 在 `blog/posts.json` 数组**最前面**添加一条记录：
+   ```json
+   {
+     "slug": "my-post",
+     "title": "文章标题",
+     "date": "2026-10-31",
+     "summary": "文章摘要",
+     "tags": ["Research"],
+     "lang": "zh-CN"
+   }
+   ```
 
-```json
-{
-    "slug": "my-new-post",
-    "title": "文章标题",
-    "date": "2026-03-01",
-    "summary": "文章摘要...",
-    "tags": ["标签1", "标签2"]
-}
-```
+   Use `zh-CN` for Chinese articles and `en` for English articles. The build sorts articles by date. Markdown headings are normalized below the page's single `h1`; use `#`/`##` or `##`/`###` consistently within an article.
+3. Keep article images in `blog/images/`. Existing `blog/images/...` Markdown links remain supported; the build rewrites them for each article's new URL.
+4. Push to `master`. GitHub Actions builds, checks, and publishes the site.
 
-4. 推送到 GitHub 即可
+Each article has a complete static page at `/blog/my-post/`. Reading it needs no Markdown renderer or content requests in the browser. Code highlighting is also generated at build time. Existing `blog-post.html#my-post` bookmarks redirect to the matching article; without JavaScript that address offers article links.
 
-## 📑 如何添加新论文
+## Edit the site
 
-打开 `publications.html`，在对应年份下复制一个 `pub-item` 模块并修改内容。
+- `index.html`: profile, selected publications, and the current full experience.
+- `publications.html`: publications grouped by year, with linked paper titles.
+- `blog.html`: blog listing template; `<!-- BLOG_POSTS -->` is filled by the build.
+- `_templates/post.html`: shared article layout.
+- `inc/footer.html`: shared footer, inserted at build time into every full page.
+- `css/base.css`, `css/main.css`, `css/home.css`: base, shared, and homepage styles.
+- `css/fonts.css`: locally hosted WOFF2 fonts with `font-display: swap`.
+- `js/site.js`: navigation, section highlighting, back-to-top, and image previews.
+- `scripts/build.mjs`: Markdown and shared-footer generation into `_site/`.
+- `scripts/check.mjs`: generated-site validation.
 
-## 🚀 部署到 GitHub Pages
+`experience.html` redirects to `index.html#experience`, so old links stay useful without maintaining a second version of the CV.
 
-1. 推送到 GitHub 仓库
-2. Settings → Pages → Source: `main` / `/ (root)`
-3. 等待几分钟即可访问
+## Deployment
 
-## ⚙️ 技术栈
+The `.github/workflows/pages.yml` workflow builds pull requests for validation and deploys successful `master` builds through GitHub Pages. The repository's Pages source is **GitHub Actions**.
 
-- HTML5 + CSS3 + JavaScript（纯静态）
-- marked.js (CDN) — Markdown 渲染
-- highlight.js (CDN) — 代码高亮
-- Font Awesome — 图标
-- 模板基础：[Kards by Styleshout](http://www.styleshout.com/)
-
-## 🔧 需要自行修改的内容
-
-- [ ] `images/profile-pic.jpg` — 替换为真实头像
-- [ ] Publications 页面中的 `[Paper Title — to be updated]` — 填入论文标题
-- [ ] Experience 页面中的 `[Your University]` / `[Time Period]` — 填入真实信息
-- [ ] 各页面社交链接 — 填入真实 Google Scholar / GitHub / LinkedIn 链接
+Browser dependencies are limited to the small native site script; Markdown parsing and syntax highlighting run only during the build. The design is based on Kards by Styleshout. Font and icon assets retain their existing notices and licenses.

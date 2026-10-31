@@ -23,14 +23,12 @@
 	<!-- CSS -->
    <link rel="stylesheet" href="css/base.css">  
    <link rel="stylesheet" href="css/main.css?v=20260915-teaching">
-   <link rel="stylesheet" href="css/vendor.css">
    <link rel="stylesheet" href="css/home.css?v=20260917-award-note">
 
 	<!-- Favicons -->
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 
 	<!-- Script -->
-	<script src="js/modernizr.js"></script>
 
 </head>
 
@@ -60,7 +58,7 @@
 	<!-- ========== /Header ========== -->
 
 	<!-- ========== Home Content ========== -->
-	<section id="home-content">
+	<main id="home-content">
 		<div class="profile-section">
 
 			<!-- ===== 左侧窄栏：头像 + Recent News ===== -->
@@ -178,7 +176,7 @@
 	            </div> 	            	               
 				<div class="sel-pub-body">
 					<span class="pub-badge pub-badge-chi">CHI 2026</span>
-					<a class="sel-pub-title" href="papers/chi2026-adhd.pdf" target="_blank">Scaffolding Metacognition with GenAI: Exploring Design Opportunities to Support Task Management for University Students With ADHD</a>
+					<h3 class="sel-pub-heading"><a class="sel-pub-title" href="papers/chi2026-adhd.pdf" target="_blank">Scaffolding Metacognition with GenAI: Exploring Design Opportunities to Support Task Management for University Students With ADHD</a></h3>
 					<p class="sel-pub-authors"><span class="me">Zihao ZHU</span>, Junnan YU, Yuhan LUO</p>
 					<ul class="pub-links"><li><a href="papers/chi2026-adhd.pdf" target="_blank">PDF</a></li><li><a href="https://arxiv.org/abs/2602.09381" target="_blank">arXiv</a></li><li><a href="https://dl.acm.org/doi/10.1145/3772318.3790697" target="_blank">DOI</a></li><li><a href="https://www.youtube.com/watch?v=vWu4yfu3jIo" target="_blank">Video</a></li><li><a href="papers/chi2026-adhd-slides.pdf" target="_blank">Slides</a></li></ul>
 	            </div>                
@@ -191,7 +189,7 @@
 	            </div>	               
 				<div class="sel-pub-body">
 					<span class="pub-badge pub-badge-journal">IJHCS 2025</span>
-					<a class="sel-pub-title" href="papers/ijhcs2025-gpt.pdf" target="_blank">"This is Human Intelligence Debugging Artificial Intelligence": Examining How People Prompt GPT in Seeking Mental Health Support</a>
+					<h3 class="sel-pub-heading"><a class="sel-pub-title" href="papers/ijhcs2025-gpt.pdf" target="_blank">"This is Human Intelligence Debugging Artificial Intelligence": Examining How People Prompt GPT in Seeking Mental Health Support</a></h3>
 					<p class="sel-pub-authors">Zhuoyang LI*, <span class="me">Zihao ZHU*</span>, Xinning GUI, Yuhan LUO</p>
 					<ul class="pub-links"><li><a href="papers/ijhcs2025-gpt.pdf" target="_blank">PDF</a></li><li><a href="https://linkinghub.elsevier.com/retrieve/pii/S1071581925001120" target="_blank">DOI</a></li></ul>
 						</div>
@@ -204,7 +202,7 @@
 						</div>
 				<div class="sel-pub-body">
 					<span class="pub-badge pub-badge-chi">CHI 2025</span>
-					<a class="sel-pub-title" href="papers/chi2025-vr.pdf" target="_blank">Exploring LLM-Powered Role and Action-Switching Pedagogical Agents for History Education in Virtual Reality</a>
+					<h3 class="sel-pub-heading"><a class="sel-pub-title" href="papers/chi2025-vr.pdf" target="_blank">Exploring LLM-Powered Role and Action-Switching Pedagogical Agents for History Education in Virtual Reality</a></h3>
 					<p class="sel-pub-authors"><span class="me">Zihao ZHU</span>, Ao YU, Xin TONG, Pan HUI</p>
 					<ul class="pub-links"><li><a href="papers/chi2025-vr.pdf" target="_blank">PDF</a></li><li><a href="https://arxiv.org/abs/2505.02699" target="_blank">arXiv</a></li><li><a href="https://dl.acm.org/doi/10.1145/3706598.3713109" target="_blank">DOI</a></li><li><a href="https://www.youtube.com/watch?v=UC5w4Mb6nhM" target="_blank">Video</a></li><li><a href="papers/chi2025-vr-slides.pdf" target="_blank">Slides</a></li></ul>
 							</div>
@@ -555,7 +553,7 @@
    			</div>
 
    		</div>
-	</section>
+	</main>
 	<!-- ========== /Home Content ========== -->
 
 
@@ -565,7 +563,7 @@
 		<img src="" alt="" id="lightbox-img">
    			</div>
 
-	<!-- ========== Footer (由 js/includes.js 注入 inc/footer.html) ========== -->
+	<!-- ========== Footer (发布时由 inc/footer.html 生成) ========== -->
 	<div data-include="inc/footer.html"></div>
 	<!-- ========== /Footer ========== -->
 
@@ -575,10 +573,7 @@
 		      </div>
 
 	<!-- JavaScript -->
-   <script src="js/includes.js"></script>
-   <script src="js/jquery-2.1.3.min.js"></script>
-   <script src="js/plugins.js"></script>
-   <script src="js/main.js?v=20260917-experience-nav"></script>
+   <script defer src="js/site.js"></script>
 
 </body>
 </html>

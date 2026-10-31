@@ -1,37 +1,57 @@
 [
-	{
-		"slug": "fogg-behavior-model",
-		"title": "用户行为是如何发生的（福格行为模型）",
-		"date": "2026-02-25",
-		"summary": "福格行为模型能帮助我们理解一个用户行为为什么会发生，以及可以从哪些维度去干预和引导用户。",
-		"tags": ["HCI", "Product"]
-	},
-	{
-		"slug": "new-york-california",
-		"title": "New York is 3 Hours Ahead of California",
-		"date": "2024-03-15",
-		"summary": "May we try our best to live the best of ourselves in our own time zone！",
-		"tags": ["Life", "Reflection"]
-	},
-	{
-		"slug": "phd-random-thoughts",
-		"title": "读研期间的一些细碎想法",
-		"date": "2023-09-08",
-		"summary": "很多时候对于一件事情而言，重要的是充分理解做这件事的动机，然后细细拆解把问题解决就好了。",
-		"tags": ["Research", "Life"]
-	},
-	{
-		"slug": "why-we-procrastinate",
-		"title": "我们为什么会摆烂",
-		"date": "2023-06-12",
-		"summary": "解决病态完美主义的方案：要随时随地的开始，不要煞有其事的开始。",
-		"tags": ["Productivity", "Life"]
-	},
-	{
-		"slug": "what-is-okr",
-		"title": "什么是OKR",
-		"date": "2023-06-11",
-		"summary": "最早是21年在小米实习的时候在一场讲座上听到OKR，对于什么是OKR，感觉我一直处于半知半解的状态，这两天稍稍学习了一下，想尝试从我的角度说说OKR是什么。",
-		"tags": ["Productivity", "Research"]
-	}
+  {
+    "slug": "fogg-behavior-model",
+    "title": "用户行为是如何发生的（福格行为模型）",
+    "date": "2026-02-25",
+    "summary": "福格行为模型能帮助我们理解一个用户行为为什么会发生，以及可以从哪些维度去干预和引导用户。",
+    "tags": [
+      "HCI",
+      "Product"
+    ],
+    "lang": "zh-CN"
+  },
+  {
+    "slug": "new-york-california",
+    "title": "New York is 3 Hours Ahead of California",
+    "date": "2024-03-15",
+    "summary": "May we try our best to live the best of ourselves in our own time zone！",
+    "tags": [
+      "Life",
+      "Reflection"
+    ],
+    "lang": "en"
+  },
+  {
+    "slug": "phd-random-thoughts",
+    "title": "读研期间的一些细碎想法",
+    "date": "2023-09-08",
+    "summary": "很多时候对于一件事情而言，重要的是充分理解做这件事的动机，然后细细拆解把问题解决就好了。",
+    "tags": [
+      "Research",
+      "Life"
+    ],
+    "lang": "zh-CN"
+  },
+  {
+    "slug": "why-we-procrastinate",
+    "title": "我们为什么会摆烂",
+    "date": "2023-06-12",
+    "summary": "解决病态完美主义的方案：要随时随地的开始，不要煞有其事的开始。",
+    "tags": [
+      "Productivity",
+      "Life"
+    ],
+    "lang": "zh-CN"
+  },
+  {
+    "slug": "what-is-okr",
+    "title": "什么是OKR",
+    "date": "2023-06-11",
+    "summary": "最早是21年在小米实习的时候在一场讲座上听到OKR，对于什么是OKR，感觉我一直处于半知半解的状态，这两天稍稍学习了一下，想尝试从我的角度说说OKR是什么。",
+    "tags": [
+      "Productivity",
+      "Research"
+    ],
+    "lang": "zh-CN"
+  }
 ]

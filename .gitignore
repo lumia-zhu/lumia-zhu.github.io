@@ -14,3 +14,7 @@ desktop.ini
 *.swp
 *.swo
 *~
+
+# Build dependencies and generated website
+node_modules/
+_site/
