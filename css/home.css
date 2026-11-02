@@ -283,17 +283,17 @@
     outline-offset: 4px;
 }
 
-/* Center the compact contact group beneath the profile details. */
+/* Give the two contact columns room to breathe beneath the profile details. */
 .profile-left .profile-links {
     display: grid;
-    width: max-content;
+    width: 20rem;
     max-width: 100%;
     grid-template-columns: max-content max-content;
-    column-gap: 1.2rem;
-    row-gap: .1rem;
+    column-gap: 2.4rem;
+    row-gap: 1rem;
     margin-top: -1rem;
     margin-inline: auto;
-    justify-content: center;
+    justify-content: space-between;
 }
 .profile-left .news-widget {
     margin-top: .6rem;
