@@ -30,7 +30,7 @@ if (path.dirname(output) !== path.resolve(root) || path.basename(output) !== '_s
 }
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-for (const directory of ['css', 'js', 'fonts', 'images', 'papers', 'blog/images', 'blog/posts']) {
+for (const directory of ['css', 'js', 'fonts', 'images', 'papers', 'projects', 'blog/images', 'blog/posts']) {
   await cp(path.join(root, directory), path.join(output, directory), { recursive: true });
 }
 await cp(path.join(root, 'favicon.ico'), path.join(output, 'favicon.ico'));
@@ -106,4 +106,4 @@ for (const post of posts) {
 
 await cp(path.join(root, 'node_modules/highlight.js/styles/atom-one-dark.min.css'), path.join(output, 'css/highlight.css'));
 await writeFile(path.join(output, '.nojekyll'), '');
-console.log(`Built ${posts.length} static articles and 5 root pages in _site.`);
+console.log(`Built ${posts.length} static articles, 5 root pages, and project pages in _site.`);

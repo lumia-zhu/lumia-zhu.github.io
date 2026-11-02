@@ -42,6 +42,7 @@ Each article has a complete static page at `/blog/my-post/`. Reading it needs no
 - `index.html`: profile, selected publications, and the current full experience.
 - `publications.html`: publications grouped by year, with linked paper titles.
 - `blog.html`: blog listing template; `<!-- BLOG_POSTS -->` is filled by the build.
+- `projects/chi2026-metacognition/`: standalone CHI 2026 project page, scoped styles, citation, and contributor assets. Project folders are copied to `_site/projects/` during the build.
 - `_templates/post.html`: shared article layout.
 - `inc/footer.html`: shared footer, inserted at build time into every full page.
 - `css/base.css`, `css/main.css`, `css/home.css`: base, shared, and homepage styles.

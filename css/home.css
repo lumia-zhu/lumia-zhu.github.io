@@ -283,14 +283,14 @@
     outline-offset: 4px;
 }
 
-/* Give the two contact columns room to breathe beneath the profile details. */
+/* Keep the contact group close to the portrait width with balanced spacing. */
 .profile-left .profile-links {
     display: grid;
-    width: 20rem;
+    width: 18rem;
     max-width: 100%;
     grid-template-columns: max-content max-content;
     column-gap: 2.4rem;
-    row-gap: 1rem;
+    row-gap: .8rem;
     margin-top: -1rem;
     margin-inline: auto;
     justify-content: space-between;
@@ -302,7 +302,8 @@
 @media (max-width: 768px) {
     .profile-left .profile-links { margin-top: .2rem; }
 }
-.profile-left .profile-links li { margin: 0; }
+/* Override the mobile sidebar's centering so each column keeps one left edge. */
+.profile-left .profile-links li { margin: 0; text-align: left; }
 .profile-left .profile-links li a {
     justify-content: flex-start;
     gap: .5rem;
