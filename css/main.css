@@ -1333,16 +1333,21 @@ body {
 .pub-links li {
 	padding: 0;
 }
-.pub-links li a {
-	display: inline-block;
+.pub-links li a,
+.pub-disclosure > summary {
+	position: relative;
 	font-family: "poppins-medium", sans-serif;
 	font-size: 1rem;
+	font-weight: normal;
 	color: #66BAB7;
-	padding: 0.12rem 0.7rem;
 	line-height: 1.6;
+	letter-spacing: .02rem;
+}
+.pub-links li a {
+	display: inline-block;
+	padding: 0.12rem 0.7rem;
 	border: 1px solid rgba(102,186,183,0.6);
 	border-radius: 3px;
-	letter-spacing: .02rem;
 	transition: all 0.2s ease;
 }
 .pub-links li a:hover {
@@ -1502,6 +1507,66 @@ body {
 	color: #666;
 	line-height: 1.75;
 	margin-bottom: 1rem;
+}
+.pub-resources .pub-links li {
+	display: flex;
+	align-items: center;
+}
+.pub-disclosure > summary {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-inline-start: 1.32em;
+	width: fit-content;
+	margin-inline-start: auto;
+	cursor: pointer;
+	list-style: none;
+}
+.pub-disclosure > summary::-webkit-details-marker { display: none; }
+.pub-disclosure > summary::before {
+	content: "";
+	position: absolute;
+	inset-inline-start: 0;
+	top: calc(50% - .41em);
+	width: .82em;
+	height: .82em;
+	background: currentColor;
+	clip-path: polygon(14% 0, 96% 50%, 14% 100%);
+}
+.pub-disclosure[open] > summary::before { transform: rotate(90deg); }
+.pub-disclosure > summary:hover { text-decoration: underline; }
+.pub-disclosure > summary:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 3px;
+}
+.pub-disclosure .pub-abstract { margin: 0; padding-top: 1rem; }
+@supports selector(details::details-content) {
+	.pub-resources {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: first baseline;
+		column-gap: 1rem;
+	}
+	.pub-disclosure { display: contents; }
+	.pub-disclosure::details-content {
+		grid-column: 1 / -1;
+		block-size: 0;
+		overflow: clip;
+	}
+	.pub-disclosure[open]::details-content { block-size: auto; }
+}
+@media (prefers-reduced-motion: no-preference) {
+	.pub-disclosure > summary::before { transition: transform .2s ease-out; }
+	@supports (interpolate-size: allow-keywords) {
+		.pub-disclosure::details-content {
+			interpolate-size: allow-keywords;
+			transition: block-size .16s ease-out, content-visibility .16s allow-discrete;
+		}
+		.pub-disclosure[open]::details-content { transition-duration: .2s; }
+	}
+}
+@media (pointer: coarse) {
+	.pub-disclosure > summary { min-height: 44px; min-width: 44px; }
 }
 
 /* --- Experience Page --- */
