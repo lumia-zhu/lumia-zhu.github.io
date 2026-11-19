@@ -184,7 +184,7 @@
     padding: .7rem 0 1.2rem;
 }
 .home-experience .exp-timeline--flat .exp-card:last-child { border-bottom: 0; }
-/* Award first, supporting context below, with a quiet date column. */
+/* Honors & Awards */
 .home-award-list { list-style: none; margin: 0; padding: 0; }
 .home-experience .home-award-list .exp-card {
     padding: 1rem 0;
@@ -203,13 +203,13 @@
     text-wrap: pretty;
     overflow-wrap: break-word;
 }
-.home-experience .home-award-list .exp-card-org {
+.home-experience .home-award-list .award-result {
     margin: .35rem 0 0;
     font-family: "poppins-regular", sans-serif;
     font-size: 1.25rem;
     font-style: normal;
     line-height: 1.65;
-    color: #68716c;
+    color: #555;
     text-wrap: pretty;
     overflow-wrap: break-word;
 }
@@ -238,8 +238,7 @@
     #experience.home-experience { margin-top: 3rem; padding-top: 2.4rem; }
     .home-experience .exp-card-top { gap: .4rem; }
     .home-award-list .exp-card-top { grid-template-columns: minmax(0, 1fr); }
-    .home-award-list .exp-card-top > div:first-child { grid-row: 2; }
-    .home-experience .home-award-list .exp-card-meta { grid-row: 1; padding-top: 0; }
+    .home-experience .home-award-list .exp-card-meta { text-align: left; padding-top: 0; }
 }
 
 /* A quiet invitation between the bio and selected papers. */
